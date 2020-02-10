@@ -1,0 +1,7 @@
+<table >
+  <tr>
+    <td [ngClass]="{'chosen':re===reApiService.reType}" *ngFor="let re of reTypes; let i=index" (click)="onClickREtype(re)">
+      <a > {{ reTypesHebrew[i]}}</a>
+
+    </td>
+  </tr>

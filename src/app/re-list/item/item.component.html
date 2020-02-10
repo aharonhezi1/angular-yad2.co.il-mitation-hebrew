@@ -1,0 +1,152 @@
+<table (click)="onItemClicked()">
+  <table *ngIf="!isItemOpen" class="table-item">
+    <tr>
+      <td [ngClass]="'pictures-adress'">
+        <table>
+          <tr>
+            <th>
+              <img alt="" height="66px" width="110px" src={{re.pictures[1]}} />
+            </th>
+            <th>
+              <h5>
+                {{ re.address.number}} {{ re.address.street}}
+              </h5>
+              <p>
+                {{re.about.type}}
+                {{ re.address.city}}
+                {{ re.address.neighborhood}}
+              </p>
+            </th>
+          </tr>
+        </table>
+      </td>
+      <td [ngClass]="'about'">
+        <table>
+          <tr>
+            <th>
+              {{ re.about.squaremeter
+              ? " " +  re.about.squaremeter
+              : ""}}
+            </th>
+            <th>
+              {{ re.about.floor ? " " +  re.about.floor : ""}}
+            </th>
+            <th>
+              {{ re.about.rooms ? " " +  re.about.rooms : ""}}
+            </th>
+          </tr>
+          <tr [ngClass]="'footer'">
+            <th><span>{{translate['squaremeter']}} </span> </th>
+            <th> <span>{{translate['floor']}} </span> </th>
+            <th><span>{{translate['rooms']}} </span> </th>
+          </tr>
+        </table>
+      </td>
+      <td [ngClass]="'price'">
+       <span>{{ re.price ?  re.price +" ₪": "not mentioned"}}</span> 
+      </td>
+    </tr>
+  </table>
+
+  <table *ngIf="isItemOpen" class="table-item-open">
+    <tr>
+      <th rowSpan="2" class="img-open">
+        <img alt="" height="117px" width="195px" src={{re.pictures[1]}} />
+      </th>
+      <td>
+        <table class="address-open">
+          <tr>
+            <th>
+              <h5>
+                {{re.address.number}} {{re.address.street}}
+              </h5>
+              <p>
+                {{re.address.city}}{{" "}}
+                {{re.address.neighborhood}}
+              </p>
+            </th>
+          </tr>
+        </table>
+      </td>
+      <td class="price-open">
+        {{re.price ? "$ " + re.price : "not mentioned"}}
+      </td>
+    </tr>
+    <tr class="about-open">
+      <td>
+        <table>
+          <tr>
+            <th>
+              {{re.about.squaremeter
+                ? " " + re.about.squaremeter
+                : ""}}
+            </th>
+            <th>
+              {{re.about.floor
+                ? " " + re.about.floor
+                : ""}}
+            </th>
+            <th>
+              {{re.about.rooms
+                ? " " + re.about.rooms
+                : ""}}
+            </th>
+          </tr>
+          <tr class="about-label-open">
+            <th><span>{{translate['squaremeter']}} </span> </th>
+            <th> <span>{{translate['floor']}} </span> </th>
+            <th><span>{{translate['rooms']}} </span> </th>
+          </tr>
+        </table>
+  </table>
+
+  <div>
+
+    <table *ngIf="isItemOpen">
+      <tr>
+        <td rowSpan="3" class='comercialBoxStyle'>
+          <div [ngStyle]="{'width': '195px'}">
+
+          </div>
+        </td>
+        <td class="detailsBoxStyle">
+          <div class="detailsBoxStyle">
+            <table class="detailsBoxStyle-child">
+              <tr>
+                <th colSpan="2">{{"תיאור הנכס"}}</th>
+              </tr>
+              <tr>
+                <td colSpan="2">{{re.description}}</td>
+              </tr>
+              <tr class="about-detail">
+                <div class="about-detail-child" *ngFor="let detail of aboutCol; let i=index">
+                  {{translate[detail]}}<b> {{translate[re.about[detail]]|| re.about[detail]}}</b>
+                </div>
+                 <!-- <div class="about-detail-child" *ngFor="let detail of aboutCol; let i=index">
+                  {{translate[detail]}}<b> {{translate[re.about[detail]]}}</b>
+                </div> -->
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="detailsBoxStyle">
+            <hr />
+
+            <div class="detailsBoxStyle-child">
+              <div>{{"מה יש בנכס?"}}</div>
+              <div class="propertyDetailsContainer">
+                <span   [ngClass]="re.propertyDetails[detail] ?'propertyExtraDetails':'propertyExtraDetails-exist'"
+                  *ngFor="let detail of propertyDetailsCol; let i=index">
+                  {{translate[detail] }}
+                </span>
+
+              </div>
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>

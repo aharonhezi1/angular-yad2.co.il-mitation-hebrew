@@ -1,0 +1,21 @@
+.list{
+  padding-right: 15vw;
+  padding-top: 15vh;
+ }
+ .filter{
+   padding-right: 15vw;
+   padding-top: 5vh;
+ }
+#app > * {
+  direction: rtl;
+  text-align: right;
+  .list{
+    padding-right: 15vw;
+    padding-top: 15vh;
+   }
+   .filter{
+     padding-right: 15vw;
+     padding-top: 5vh;
+   }
+}
+
