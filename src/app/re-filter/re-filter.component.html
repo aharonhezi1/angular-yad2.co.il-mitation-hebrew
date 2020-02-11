@@ -1,15 +1,15 @@
-<div [ngClass]="'filterContainer'">
+<div  [ngClass]="'filterContainer'">
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div [ngClass]="'inputsFlex'">
       <table>
         <tr>
           <td colspan="3">
             <h5>
-              {{"איזה נכס ל"}}<a (click)="onHeaderLinkClicked()" id="headerLink">מכירה</a>{{" תרצו לחפש?"}}
+              {{"איזה נכס ל"}}<a (clickOutside)="onClickOutSideBar($event,'headerLink')"   (click)="onHeaderLinkClicked($event)" id="headerLink">מכירה</a>{{" תרצו לחפש?"}}
             </h5>
           </td>
         </tr>
-        <div *ngIf="isHeaderLinkClicked" class="headerLinkOption contanier">
+        <div  *ngIf="isHeaderLinkClicked" class="headerLinkOption contanier" >
           <div class="headerLinkOption Headline">{{'ניתן לחפש גם:'}} </div>
 
           <div *ngFor="let link of reTypes"
@@ -37,7 +37,7 @@
           <td>
             <input placeholder="לדוגמא: פלורנטין" formControlName="address" type="text" autocomplete="something-new" />
           </td>
-          <td (click)="onClickPropertyType()">
+          <td (click)="onClickPropertyType($event)">
             <div [ngClass]="'property-type'">
               <input placeholder="בחרו סוגי נכסים" formControlName="propertyType" type="text"
                 autocomplete="something-new" />
@@ -45,7 +45,7 @@
                 [ngStyle]="{'transform':isPropertyTypeClicked? 'rotate(180deg)':''}" />
             </div>
           </td>
-          <td [ngClass]="'rooms-num'" (click)="onClickedRooms()">
+          <td [ngClass]="'rooms-num'" (click)="onClickedRooms($event)">
             <input placeholder="חדרים" formControlName="rooms" type="text">
             <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
               [ngStyle]="{'transform':isRoomsClicked ? 'rotate(180deg)':''}" />
@@ -68,7 +68,7 @@
     </div>
   </form>
   <div class="row">
-    <span class="property-type-options" *ngIf="isPropertyTypeClicked">
+    <span class="property-type-options" *ngIf="isPropertyTypeClicked" id="propertyType" (clickOutside)="onClickOutSideBar($event,'propertyType')">
       <div *ngFor="let option of propertyTypeOptions; let i=index" class="cntr">
         <label for="{{option}}" class="label-cbx">
           <input [checked]="propertyTypesChecked.indexOf(option)!==-1" id="{{option}}" type="checkbox" class="invisible"
@@ -85,15 +85,15 @@
         </label>
       </div>
     </span>
-    <span class="rooms-options" *ngIf="isRoomsClicked">
+    <span (clickOutside)="onClickOutSideBar($event,'roomsOptions')" id="roomsOptions" class="rooms-options" *ngIf="isRoomsClicked">
       <table>
         <tr>
-          <th (click)="onClickRoomSelectMin()">
+          <th (click)="onClickRoomSelectMin($event)">
             <input placeholder="מ-" type="text" [(ngModel)]="chosenRooms.min" />
             <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
               [ngStyle]="{'transform': isRoomSelectMinClicked ? 'rotate(180deg)':''}" />
           </th>
-          <th (click)="onClickRoomSelectMax()">
+          <th (click)="onClickRoomSelectMax($event)">
             <input placeholder="עד-" type="text" [(ngModel)]="chosenRooms.max" />
             <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
               [ngStyle]="{'transform': isRoomSelectMaxClicked ? 'rotate(180deg)':''}" /></th>
@@ -105,14 +105,14 @@
         <tr>
           <td>
             <ul *ngIf="isRoomSelectMinClicked" class="roomSelect" id="roomSelectMin" #roomSelectMin>
-              <li (click)="onChooseRoomsNum('min')">הכל</li>
-              <li *ngFor="let num of minRoomArray" (click)="onChooseRoomsNum('min',num)">{{num}}</li>
+              <li (click)="onChooseRoomsNum('min',$event)">הכל</li>
+              <li *ngFor="let num of minRoomArray" (click)="onChooseRoomsNum('min',$event,num)">{{num}}</li>
             </ul>
           </td>
           <td>
             <ul *ngIf="isRoomSelectMaxClicked" class="roomSelect" id="roomSelectMax" #roomSelectMax>
-              <li (click)="onChooseRoomsNum('max')">הכל</li>
-              <li *ngFor="let num of maxRoomArray" (click)="onChooseRoomsNum('max',num)">{{num}}</li>
+              <li (click)="onChooseRoomsNum('max',$event)">הכל</li>
+              <li *ngFor="let num of maxRoomArray" (click)="onChooseRoomsNum('max',$event,num)">{{num}}</li>
             </ul>
           </td>
         </tr>

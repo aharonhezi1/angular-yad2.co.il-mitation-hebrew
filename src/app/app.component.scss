@@ -6,7 +6,9 @@
    padding-right: 15vw;
    padding-top: 5vh;
  }
-#app > * {
+#app{
+  & > * {
+
   direction: rtl;
   text-align: right;
   .list{
@@ -17,5 +19,6 @@
      padding-right: 15vw;
      padding-top: 5vh;
    }
-}
+
+}}
 

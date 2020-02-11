@@ -8,6 +8,8 @@ import { ReHeaderComponent } from './re-header/re-header.component';
 import { ReFilterComponent } from './re-filter/re-filter.component';
 import { ReListComponent } from './re-list/re-list.component';
 import { ItemComponent } from './re-list/item/item.component';
+import { ClickOutsideModule } from 'ng-click-outside';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { ItemComponent } from './re-list/item/item.component';
     HttpClientModule,
     BrowserModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    ClickOutsideModule
   ],
   providers: [],
   bootstrap: [AppComponent]
