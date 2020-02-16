@@ -7,7 +7,11 @@
   -moz-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
   box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
 }
+input{
+  text-decoration: none;
+  outline: none;
 
+}
 #headerLink {
   color: #f57028;
   border-bottom: dotted #f57028;
@@ -36,7 +40,6 @@
     height: 35px;
     border: transparent;
     width: 120px;
-    outline: none;
   }
 }
 
@@ -99,9 +102,7 @@ input {
 
 .advanced-search {
   line-height: 0.8;
-  background-color: #f57028;
-  color: white;
-  font-weight: bold;
+  background-color: #eeeeee;
   font-size: 13px;
 
 }
@@ -151,7 +152,68 @@ input {
   width: 210px;
   height: 226px;
   z-index: 99 !important;
+  position: relative;
+
+  &.moreProperties {
+    width: 750px;
+    height: 200px !important;
+
+  }
+
+  a {
+    color: #f57028;
+    bottom: 0;
+    position: absolute;
+    padding: 0 20px 15px 0;
+
+  }
 }
+.adrresses-options {
+  margin-right: 15px;
+  border: 1px solid #ccc !important;
+  border-top: none !important;
+  z-index: 99 !important;
+  width: 448px !important;
+  background-color: #ffffff;
+span,th,td{
+  padding: 0 10px 0 10px;
+
+}
+
+  th {
+    background-color: #eeeeee;
+    // 
+    width: 448px !important;
+    height: 40px;
+    font-size: small;
+
+  }
+
+  td {
+    font-size: small;
+
+    width: 448px !important;
+    height: 30px;
+    background-color: #ffffff;
+span{
+  float: left;
+}
+  }
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column !important;
+  height: 180px !important;
+
+  &.moreProperties {
+    flex-wrap: wrap;
+  }
+
+  //
+}
+
+
 
 .rooms-options {
   margin-right: 372px;
@@ -266,10 +328,9 @@ input {
   fill: none;
   stroke: #FFF;
   stroke-width: 2;
-
   stroke-dasharray: 18px;
   stroke-dashoffset: 18px;
-  ;
+
 }
 
 .label-cbx>span {
@@ -278,6 +339,7 @@ input {
 }
 
 .cntr {
+  flex-basis: 5%;
   margin-right: 10px;
   margin-top: 10px;
 }

@@ -1,23 +1,32 @@
 th {
   font-weight: normal;
+  font: Rubic;
 }
 
 .pictures-adress {
   width: 345px;
   padding-right: 5px;
+  #address{
+    padding-right: 20px;
+  }
+  p{
+    font-size: small;
+  }
 }
 
 .about {
+  padding: 0 10px 0 10px;
   width: 186px;
   text-align: center;
-
-  table {
+table{
+  margin-right: 30px;
+}
 
     .footer {
       color: gray;
     }
   }
-}
+
 
 .price {
   width: 182px;
@@ -83,7 +92,11 @@ th {
  
  // margin-right: 15px
  &-child{
-  margin-right: 15px
+  margin-right: 15px;
+  font-size: small;
+ }
+  &.header{
+   font-weight: bold;
  }
 }
 
@@ -113,10 +126,9 @@ th {
   width: 120px;
  // font-weight: bold;
     font-size: .80rem;
-  &-exist {
+  &.exist {
     width: 120px;
-  //  font-weight: bold;
-    font-size: .80rem;
+  
     color: gray
   }
   padding:.5vh ;

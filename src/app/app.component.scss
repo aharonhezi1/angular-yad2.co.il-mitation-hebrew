@@ -1,5 +1,5 @@
 .list{
-  padding-right: 15vw;
+  padding-right: 15vw !important;
   padding-top: 15vh;
  }
  .filter{
@@ -11,14 +11,7 @@
 
   direction: rtl;
   text-align: right;
-  .list{
-    padding-right: 15vw;
-    padding-top: 15vh;
-   }
-   .filter{
-     padding-right: 15vw;
-     padding-top: 5vh;
-   }
+//
 
 }}
 

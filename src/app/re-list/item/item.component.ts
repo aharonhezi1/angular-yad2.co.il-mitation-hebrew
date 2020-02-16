@@ -7,7 +7,7 @@ import {translate} from '../../../assets/translate';
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  translate=translate
+  translate= translate;
   @Input() re: any;
   constructor() { }
   isItemOpen = false;
@@ -17,14 +17,12 @@ export class ItemComponent implements OnInit {
   decamelizeAboutCol = []
 
   onItemClicked() {
-    this.isItemOpen = !this.isItemOpen;
-    console.log('onItemClicked');
-
+    this.isItemOpen = !this.isItemOpen; 
   }
   ngOnInit() {
-    console.log(this.re);
+  //  console.log(this.re);
     this.propertyDetailsCol = Object.keys(this.re.propertyDetails);
-    this.propertyDetailsCol = this.propertyDetailsCol.slice(1, this.propertyDetailsCol.length - 1);
+    this.propertyDetailsCol = this.propertyDetailsCol.slice(1);
 
     this.decamelizePropertyDetailsCol = this.propertyDetailsCol.map(detail => {
       return decamelize(detail, ' ');

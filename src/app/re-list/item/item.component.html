@@ -7,14 +7,14 @@
             <th>
               <img alt="" height="66px" width="110px" src={{re.pictures[1]}} />
             </th>
-            <th>
-              <h5>
-                {{ re.address.number}} {{ re.address.street}}
-              </h5>
+            <th id="address">
+              <h6>
+                {{ re.address.street}}   {{ re.address.number}} 
+              </h6>
               <p>
-                {{re.about.type}}
-                {{ re.address.city}}
+                {{translate[re.about.type]}}               
                 {{ re.address.neighborhood}}
+                {{ re.address.city}}
               </p>
             </th>
           </tr>
@@ -35,7 +35,7 @@
               {{ re.about.rooms ? " " +  re.about.rooms : ""}}
             </th>
           </tr>
-          <tr [ngClass]="'footer'">
+          <tr [ngClass]="'about footer'">
             <th><span>{{translate['squaremeter']}} </span> </th>
             <th> <span>{{translate['floor']}} </span> </th>
             <th><span>{{translate['rooms']}} </span> </th>
@@ -57,9 +57,9 @@
         <table class="address-open">
           <tr>
             <th>
-              <h5>
+              <h6>
                 {{re.address.number}} {{re.address.street}}
-              </h5>
+              </h6>
               <p>
                 {{re.address.city}}{{" "}}
                 {{re.address.neighborhood}}
@@ -69,7 +69,7 @@
         </table>
       </td>
       <td class="price-open">
-        {{re.price ? "$ " + re.price : "not mentioned"}}
+        {{re.price ? re.price +' ₪': "not mentioned"}}
       </td>
     </tr>
     <tr class="about-open">
@@ -113,7 +113,7 @@
           <div class="detailsBoxStyle">
             <table class="detailsBoxStyle-child">
               <tr>
-                <th colSpan="2">{{"תיאור הנכס"}}</th>
+                <th class="detailsBoxStyle header"  colSpan="2">{{"תיאור הנכס"}}</th>
               </tr>
               <tr>
                 <td colSpan="2">{{re.description}}</td>
@@ -136,10 +136,10 @@
             <hr />
 
             <div class="detailsBoxStyle-child">
-              <div>{{"מה יש בנכס?"}}</div>
+              <div class="detailsBoxStyle header">{{"מה יש בנכס?"}}</div>
               <div class="propertyDetailsContainer">
-                <span   [ngClass]="re.propertyDetails[detail] ?'propertyExtraDetails':'propertyExtraDetails-exist'"
-                  *ngFor="let detail of propertyDetailsCol; let i=index">
+                <span    *ngFor="let detail of propertyDetailsCol" [ngClass]="re.propertyDetails[detail] ?'propertyExtraDetails':'propertyExtraDetails exist'"
+                >
                   {{translate[detail] }}
                 </span>
 

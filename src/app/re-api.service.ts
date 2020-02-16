@@ -16,7 +16,7 @@ export class ReApiService {
   constructor(private http: HttpClient) { }
 
   getRE = (type = this.reType) => {
-    console.log(environment.apiUrl + this.reParams + type);
+   // console.log(environment.apiUrl + this.reParams + type);
 
     return this.http.get(environment.apiUrl + this.reParams + type).subscribe((list: any) => {
       this.reListSubject.next(list);
@@ -28,10 +28,14 @@ export class ReApiService {
       queryParams += `${detail}=${details[detail]}&`);
     queryParams = queryParams.slice(0, queryParams.length - 1);
 
-    console.log(environment.apiUrl + this.reParams + this.reType + queryParams);
+   // console.log(environment.apiUrl + this.reParams + this.reType + queryParams);
 
     return this.http.get(environment.apiUrl + this.reParams + this.reType + queryParams).subscribe((list: any) => {
       this.reListSubject.next(list);
     });
+  }
+  postSearchAddress(address){
+    console.log(address);    
+    return this.http.post(environment.apiUrl + this.reParams+'find-address',{address})
   }
 }
