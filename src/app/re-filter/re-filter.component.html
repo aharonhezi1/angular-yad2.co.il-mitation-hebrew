@@ -1,4 +1,7 @@
 <div [ngClass]="'filterContainer'">
+ 
+
+
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <div [ngClass]="'inputsFlex'">
       <table>
@@ -59,11 +62,13 @@
             <input placeholder="עד-מחיר" formControlName="maxPrice" type="text" />
           </td>
           <td>
-            <button [ngClass]="'advanced-search'" type="button">{{'חיפוש מתקדם'}}
+            <button [ngClass]="'advanced-search'" type="button">
+              <!-- <i class="fas fa-plus-circle"></i> -->
+              <img src="https://img.icons8.com/pastel-glyph/64/000000/plus.png" width="15px">{{' חיפוש מתקדם'}}
             </button>
           </td>
           <td>
-            <button [ngClass]="'search-button'" type="submit">{{'חיפוש'}}</button>
+            <button [ngClass]="'search-button'" type="submit"> <i class="fas fa-search"></i>{{' חיפוש'}}</button>
           </td>
         </tr>
       </table>

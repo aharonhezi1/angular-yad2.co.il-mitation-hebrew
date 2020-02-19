@@ -1,12 +1,19 @@
-<div id="app" (click)="onClickApp()"><div [ngStyle]="{'width': '100vw',
+<div id="app" (click)="onClickApp()">
+  <div [ngStyle]="{'width': '100vw',
   'height': '75px',
   'backgroundColor':' #f57028'}"></div>
- <app-re-header></app-re-header>
+  <app-re-header></app-re-header>
 
-      <div [ngClass]="'filter'"><app-re-filter></app-re-filter></div>
+  <div [ngClass]="'filter'">
+    <app-re-filter></app-re-filter>
+  </div>
+  <div class="sort">
+    <app-re-sort></app-re-sort>
+  </div>
 
-<div class=" list"></div>
-  <app-re-list></app-re-list>
+  <div class="list">
+    <app-re-list></app-re-list>
+  </div>
+
 
 </div>
-

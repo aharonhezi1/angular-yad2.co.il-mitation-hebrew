@@ -1,17 +1,24 @@
-.list{
-  padding-right: 15vw !important;
-  padding-top: 15vh;
- }
+
  .filter{
-   padding-right: 15vw;
-   padding-top: 5vh;
+  padding-right: 25vw;
+  padding-top: 20vh;
  }
+
+ .sort{
+  padding-right: 25vw;
+  padding-top: 10vh;
+  margin-bottom: 2vh;
+ }
+
+ .list{
+  padding-right: 25vw;
+  margin-bottom:5vh ;
+ }
+
 #app{
   & > * {
-
+//font-family:Rubic;;
   direction: rtl;
   text-align: right;
-//
-
 }}
 

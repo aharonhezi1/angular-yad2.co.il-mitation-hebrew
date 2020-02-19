@@ -2,13 +2,14 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ReApiService } from '../re-api.service';
 import { translate } from '../../assets/translate';
+import { ReService } from '../re.service';
 @Component({
   selector: 'app-re-filter',
   templateUrl: './re-filter.component.html',
   styleUrls: ['./re-filter.component.scss']
 })
 export class ReFilterComponent implements OnInit, AfterViewInit {
-  constructor(private formBuilder: FormBuilder, private reApiService: ReApiService) { }
+  constructor(private formBuilder: FormBuilder, private reApiService: ReApiService,private reService:ReService) { }
   propertyTypeOption = {
     apartment: 'דירה', penthouse: 'פאנטהאוס', 'private house': 'בית פרטי', duplex: 'דופלקס',
     'land plot': 'מגרשים',
@@ -35,14 +36,14 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
   isRoomSelectMaxClicked = false;
   isMorePropertiesClicked = false;
   isAddressClicked = false;
-  isAddressChosen=false;
+  isAddressChosen = false;
   chosenRooms = {
     max: null, min: null
   };
   // chosenRooms.max;
   // chosenRooms.min;
   roomsArray = [];
-  maxRoomArray = [];
+  maxRoomArray = []; 20
   minRoomArray = [];
   form: FormGroup;
 
@@ -67,7 +68,9 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
 
   }
   onClickPropertyType(e) {
-    this.isAddressClicked=false;
+    this.reService.isOpenSortComponentBarsSubject.next(false)
+
+    this.isAddressClicked = false;
 
     this.isPropertyTypeClicked = !this.isPropertyTypeClicked;
     this.isRoomsClicked = false;
@@ -76,7 +79,9 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
 
   }
   onClickedRooms(e) {
-    this.isAddressClicked=false;
+    this.reService.isOpenSortComponentBarsSubject.next(false)
+
+    this.isAddressClicked = false;
     this.isRoomsClicked = !this.isRoomsClicked;
     this.isPropertyTypeClicked = false;
     this.isRoomSelectMinClicked = false;
@@ -129,10 +134,10 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
   }
 
   onSubmit() {
-    let formValue =this.form.value;
+    let formValue = this.form.value;
     formValue = {
       ...formValue, propertyType: this.propertyTypesChecked,
-      address:this.isAddressChosen?formValue.address:'',
+      address: this.isAddressChosen ? formValue.address : '',
       maxRooms: this.chosenRooms.max ? this.chosenRooms.max : 12,
       minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0
     };
@@ -161,15 +166,17 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
       this.maxRoomArray = this.roomsArray.filter(num => num >= roomNum);
     }
   }
-  onChooseAddress(address,e) {
-    this.isAddressChosen=true;
-    console.log(address );
+  onChooseAddress(address, e) {
+    this.isAddressChosen = true;
+    console.log(address);
 
-     this.form.controls.address.setValue(address)
+    this.form.controls.address.setValue(address)
     e.stopPropagation()
   }
   onChangeAddress(e) {
-    this.isAddressChosen=false;
+    this.reService.isOpenSortComponentBarsSubject.next(false)
+
+    this.isAddressChosen = false;
 
     this.isRoomsClicked = false;
 
@@ -203,6 +210,7 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
       case 'adrressesOptions':
         this.isAddressClicked = false;
         return e.stopPropagation();
+     
 
     }
     this.isHeaderLinkClicked = false;

@@ -1,3 +1,5 @@
+@import '../../styles/varbs.scss';
+
 .filterContainer {
   padding: 20px;
   width: 960px;
@@ -13,8 +15,8 @@ input{
 
 }
 #headerLink {
-  color: #f57028;
-  border-bottom: dotted #f57028;
+  color: $theme-color;
+  border-bottom: dotted $theme-color;
 }
 
 .inputs td {
@@ -72,19 +74,18 @@ input {
 
     &:hover {
       background-color: #fef0e4;
-      color: #f57028;
+      color: $theme-color;
     }
 
     &.chosen {
       background-color: #fef0e4;
-      color: #f57028;
+      color: $theme-color;
     }
   }
 
   &.Headline {
     color: gray;
-    height: 31px;
-    padding: 10px 0 10px 0;
+
   }
 
 
@@ -92,11 +93,14 @@ input {
 
 .search-button {
 
-  background-color: #f57028;
+  background-color: $theme-color;
   color: white;
   font-weight: bold;
   font-size: 13px;
   padding: 0 15px 0 15px;
+  &:hover{
+    background-color: darken($color: $theme-color, $amount: 20%);
+  }
 
 }
 
@@ -104,6 +108,9 @@ input {
   line-height: 0.8;
   background-color: #eeeeee;
   font-size: 13px;
+ &:hover{
+   background-color: darken($color: #eeeeee, $amount: 20%);
+ }
 
 }
 
@@ -161,7 +168,7 @@ input {
   }
 
   a {
-    color: #f57028;
+    color: $theme-color;
     bottom: 0;
     position: absolute;
     padding: 0 20px 15px 0;
@@ -282,11 +289,11 @@ span{
 }
 
 .label-cbx input:checked+.checkbox {
-  border-color: #f57028;
+  border-color: $theme-color;
 }
 
 .label-cbx input:checked+.checkbox svg path {
-  fill: #f57028;
+  fill: $theme-color;
 }
 
 .label-cbx input:checked+.checkbox svg polyline {
@@ -316,7 +323,7 @@ span{
 
 .label-cbx .checkbox svg path {
   fill: none;
-  stroke: #f57028;
+  stroke: $theme-color;
   stroke-width: 2;
 
   stroke-dasharray: 71px;

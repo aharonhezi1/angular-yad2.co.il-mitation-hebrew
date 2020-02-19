@@ -9,7 +9,7 @@ import { BehaviorSubject } from 'rxjs';
 export class ReApiService {
   closeBars = new BehaviorSubject<boolean>(false);
 
-  reListSubject = new BehaviorSubject<[]>(null);
+  reListSubject = new BehaviorSubject<any>(null);
   reParams = '/api/real-estate/';
   reType = 'forsale';
 

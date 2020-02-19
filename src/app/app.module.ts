@@ -9,6 +9,7 @@ import { ReFilterComponent } from './re-filter/re-filter.component';
 import { ReListComponent } from './re-list/re-list.component';
 import { ItemComponent } from './re-list/item/item.component';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { ReSortComponent } from './re-sort/re-sort.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ClickOutsideModule } from 'ng-click-outside';
     ReHeaderComponent,
     ReFilterComponent,
     ReListComponent,
-    ItemComponent
+    ItemComponent,
+    ReSortComponent
   ],
   imports: [
     HttpClientModule,

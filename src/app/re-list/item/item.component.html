@@ -5,7 +5,7 @@
         <table>
           <tr>
             <th>
-              <img alt="" height="66px" width="110px" src={{re.pictures[1]}} />
+              <img alt="" height="66px" width="110px" src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
             </th>
             <th id="address">
               <h6>
@@ -43,7 +43,7 @@
         </table>
       </td>
       <td [ngClass]="'price'">
-       <span>{{ re.price ?  re.price +" ₪": "not mentioned"}}</span> 
+       <span> {{ re.price ?  re.price +" ₪":  translate["not mentioned"]}}</span> 
       </td>
     </tr>
   </table>

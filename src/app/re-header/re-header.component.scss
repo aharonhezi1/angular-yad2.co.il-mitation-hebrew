@@ -1,3 +1,5 @@
+@import '../../styles/varbs.scss';
+
 table{
   width: 100vw;
   display: flex;
@@ -17,6 +19,6 @@ table{
       
      }
      .chosen{
-      border-bottom: 2px solid #f57028;
-      color:#f57028;
+      border-bottom: 2px solid $theme-color;
+      color:$theme-color;
      }

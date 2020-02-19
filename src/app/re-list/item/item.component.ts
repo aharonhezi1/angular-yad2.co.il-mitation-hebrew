@@ -1,13 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { decamelize } from '../../../assets/decamelize';
-import {translate} from '../../../assets/translate';
+import { translate } from '../../../assets/translate';
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
-  translate= translate;
+  defaultPic = '../../../assets/feed_img_placeholder_small.jpg';
+  translate = translate;
   @Input() re: any;
   constructor() { }
   isItemOpen = false;
@@ -17,10 +18,10 @@ export class ItemComponent implements OnInit {
   decamelizeAboutCol = []
 
   onItemClicked() {
-    this.isItemOpen = !this.isItemOpen; 
+    this.isItemOpen = !this.isItemOpen;
   }
   ngOnInit() {
-  //  console.log(this.re);
+    //  console.log(this.re);
     this.propertyDetailsCol = Object.keys(this.re.propertyDetails);
     this.propertyDetailsCol = this.propertyDetailsCol.slice(1);
 
