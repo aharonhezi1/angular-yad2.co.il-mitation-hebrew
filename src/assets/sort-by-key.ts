@@ -7,5 +7,5 @@ export default function sortbykey(array, key, ascendingFactor = 1) {
     }
     return (a[key] > b[key]) ? 1 * ascendingFactor : ((b[key] > a[key]) ? -1 * ascendingFactor : 0);
   }
-  return array.sort(compare)
+  return array.sort(compare);
 }

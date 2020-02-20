@@ -15,7 +15,7 @@ export class ReListComponent implements OnInit, OnDestroy {
   isWithPic;
   isWithPrice;
   subscription = new Subject();
-  sortLastOptions// = this.reService.sortOptions.value;
+  sortLastOptions; // = this.reService.sortOptions.value;
 
   // reType = 'forsale';
   constructor(private reApiService: ReApiService, private reService: ReService) { }
@@ -23,7 +23,6 @@ export class ReListComponent implements OnInit, OnDestroy {
   // sortbykey = (array, key) => array.sort((a, b) => (a[key] > b[key]) ? 1 : ((b[key] > a[key]) ? -1 : 0))
 
   ngOnInit() {
-
     this.reApiService.getRE();
     this.reApiService.reListSubject.subscribe((list: any) => {
       this.reList = list;

@@ -3,6 +3,8 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ReApiService } from '../re-api.service';
 import { translate } from '../../assets/translate';
 import { ReService } from '../re.service';
+import {splitBySearchExp} from '../../assets/splitBySearchExp' 
+import { from } from 'rxjs';
 @Component({
   selector: 'app-re-filter',
   templateUrl: './re-filter.component.html',
@@ -23,7 +25,8 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
     bulding: 'בניין מגורים',
     general: 'כללי'
   };
-  addresses = { streets: [], cities: [] };
+  splitBySearchExp=splitBySearchExp;
+  addresses = { streets: [], cities: [] ,address:''};
   reTypes = ['forsale', 'forRent', 'roommates', 'commercial'];
   translate = translate;
   isHeaderLinkClicked = false;
@@ -43,7 +46,7 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
   // chosenRooms.max;
   // chosenRooms.min;
   roomsArray = [];
-  maxRoomArray = []; 20
+  maxRoomArray = []; 
   minRoomArray = [];
   form: FormGroup;
 

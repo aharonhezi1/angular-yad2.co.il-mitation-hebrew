@@ -83,7 +83,7 @@
             <th colspan="2" >{{translate['city']}}</th>
           </tr>
           <tr *ngFor="let city of addresses.cities">
-            <td (click)="onChooseAddress(city,$event)">{{city}}</td>
+            <td (click)="onChooseAddress(city,$event)">{{splitBySearchExp(city,addresses.address)[0]}}<b>{{addresses.address}}</b>{{splitBySearchExp(city,addresses.address)[1]}}</td>
             <td  ><span>{{translate['city']}}</span></td>
           </tr>
 
@@ -91,7 +91,9 @@
             <th colspan="2" >{{translate['street']}}</th>
           </tr>
           <tr *ngFor="let address of addresses.streets">
-            <td (click)="onChooseAddress(address.street+', '+address.city,$event)">{{address.street+", "+address.city}}</td>
+            <!-- <td (click)="onChooseAddress(address.street+', '+address.city,$event)">{{address.street+", "+address.city}}</td> -->
+
+            <td (click)="onChooseAddress(address.street+', '+address.city,$event)">{{splitBySearchExp(address.street,addresses.address)[0]}}<b>{{addresses.address}}</b>{{splitBySearchExp(address.street,addresses.address)[1]+", "+address.city}}</td>
             <td  ><span>{{translate['street']}}</span></td>
 
           </tr>
