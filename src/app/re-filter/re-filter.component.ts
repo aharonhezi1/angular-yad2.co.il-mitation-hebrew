@@ -26,7 +26,7 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
     general: 'כללי'
   };
   splitBySearchExp=splitBySearchExp;
-  addresses = { streets: [], cities: [] ,address:''};
+  addresses = { streets: [], cities: []};
   reTypes = ['forsale', 'forRent', 'roommates', 'commercial'];
   translate = translate;
   isHeaderLinkClicked = false;
