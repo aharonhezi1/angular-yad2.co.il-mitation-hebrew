@@ -1,0 +1,13 @@
+<div class="page-container">
+    <div *ngIf="reApiService.currentPage > 1" class="arrow" (click)="onClickArrow(false)">
+        <img src={{grayArrowLink}}> הקודם
+    </div>
+    <div *ngIf="reApiService.currentPage == 1" class="">
+        <img src={{grayArrowLink}}> הקודם
+    </div>
+    <div class="pages-number"><span [ngClass]="reApiService.currentPage==page?'current':''"
+            *ngFor="let page of pagesArray" (click)="onClickPage(page)"> {{page}}</span></div>
+    <div *ngIf="reApiService.currentPage < Math.ceil(this.pageNumber)" class="arrow" (click)="onClickArrow(true)">
+        הבא<img src={{orangeArrowLink}}></div>
+    <div *ngIf="reApiService.currentPage === Math.ceil(this.pageNumber)">הבא<img src={{orangeArrowLink}}></div>
+</div>

@@ -14,7 +14,7 @@ export class ReService {
 
   constructor() { }
 }
-class sortByModel {
+export class sortByModel {
   sortBy: string;
   isOnlyWithPic: boolean;
   isOnlyWithPrice: boolean;

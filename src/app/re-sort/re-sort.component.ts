@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from './../../environments/environment';
 import { translate } from '../../assets/translate';
 import { ReService } from '../re.service';
+import { ReApiService } from '../re-api.service';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class ReSortComponent implements OnInit {
   picOrangeUrl = environment.apiUrl + '/icons/picIconOrange.png';
 
   mapPicUrl = environment.apiUrl + '/icons/mapIcon2.png';
-  constructor(private reServicce: ReService) { }
+  constructor(private reServicce: ReService, private reApiService:ReApiService) { }
   onClickOutsideSortBy() {
     this.isShowSortBy = false;
   }
@@ -32,16 +33,22 @@ export class ReSortComponent implements OnInit {
         return;
       case 'price':
         this.isShowAddsWithPrice = !this.isShowAddsWithPrice;
-        this.reServicce.sortOptions.next({ ...this.reServicce.sortOptions.value, isOnlyWithPrice: this.isShowAddsWithPrice })
+        this.reApiService.sortOptions.isOnlyWithPrice=this.isShowAddsWithPrice;
+        this.reApiService.getFilterRE();
+       // this.reServicce.sortOptions.next({ ...this.reServicce.sortOptions.value, isOnlyWithPrice: this.isShowAddsWithPrice })
         return;
       case 'picture':
         this.isShowAddsWithPicture = !this.isShowAddsWithPicture;
-        this.reServicce.sortOptions.next({ ...this.reServicce.sortOptions.value, isOnlyWithPic: this.isShowAddsWithPicture })
+        this.reApiService.sortOptions.isOnlyWithPic=this.isShowAddsWithPicture;
+        this.reApiService.getFilterRE();
+        //this.reServicce.sortOptions.next({ ...this.reServicce.sortOptions.value, isOnlyWithPic: this.isShowAddsWithPicture })
         return;
       case 'sortByOptions':
         this.sortBy = option;
         this.isShowSortBy = false;
-        this.reServicce.sortOptions.next({ ...this.reServicce.sortOptions.value, sortBy: this.sortBy })
+        this.reApiService.sortOptions.sortBy=this.sortBy
+        this.reApiService.getFilterRE();
+       // this.reServicce.sortOptions.next({ ...this.reServicce.sortOptions.value, sortBy: this.sortBy })
         return;
     }
 

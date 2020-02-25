@@ -1,24 +1,29 @@
-
- .filter{
+.filter {
   padding-right: 25vw;
   padding-top: 20vh;
- }
+}
 
- .sort{
+.sort {
   padding-right: 25vw;
   padding-top: 10vh;
   margin-bottom: 2vh;
- }
+}
 
- .list{
+.list {
   padding-right: 25vw;
-  margin-bottom:5vh ;
- }
-
-#app{
-  & > * {
-//font-family:Rubic;;
-  direction: rtl;
-  text-align: right;
-}}
-
+  margin-bottom: 5vh;
+}
+.paging{
+  padding-right: 25vw;
+  padding-top: 10vh;
+  margin-bottom: 2vh;
+}
+#app {
+  &>* {
+    //font-family:Rubic;;
+    direction: rtl;
+    text-align: right;
+    overflow-x: unset;
+    
+  }
+}

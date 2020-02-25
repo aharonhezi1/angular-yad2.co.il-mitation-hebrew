@@ -1,0 +1,30 @@
+@import '../../styles/varbs.scss';
+
+.page-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    //align-content: space-between;
+    width: 43.4rem;
+    height: 3.6rem;
+    justify-content: space-between;
+    align-items:center ;
+    font-size: .8rem;
+    background-color: white;
+    font-size: 1rem;
+}
+.pages-number{
+    display: flex;  
+    justify-content: space-between;
+    width: 32rem;
+    
+    
+}
+.current{
+    font-weight: bold;
+    color: $theme-color;
+}
+.arrow{
+cursor: pointer;
+}
+

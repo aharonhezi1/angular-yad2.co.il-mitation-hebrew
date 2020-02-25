@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms'
 
 import { AppComponent } from './app.component';
@@ -10,6 +10,8 @@ import { ReListComponent } from './re-list/re-list.component';
 import { ItemComponent } from './re-list/item/item.component';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ReSortComponent } from './re-sort/re-sort.component';
+import { AddPageHeaderInterceptor } from './interceptors/add-page-header';
+import { PagingComponent } from './paging/paging.component';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { ReSortComponent } from './re-sort/re-sort.component';
     ReFilterComponent,
     ReListComponent,
     ItemComponent,
-    ReSortComponent
+    ReSortComponent,
+    PagingComponent
   ],
   imports: [
     HttpClientModule,
@@ -28,7 +31,7 @@ import { ReSortComponent } from './re-sort/re-sort.component';
     FormsModule,
     ClickOutsideModule
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddPageHeaderInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

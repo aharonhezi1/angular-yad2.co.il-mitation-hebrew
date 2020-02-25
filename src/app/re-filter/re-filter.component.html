@@ -1,5 +1,5 @@
 <div [ngClass]="'filterContainer'">
- 
+
 
 
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
@@ -9,7 +9,8 @@
           <td colspan="3">
             <h5>
               {{"איזה נכס ל"}}<a (clickOutside)="onClickOutSideBar($event,'headerLink')"
-                (click)="onHeaderLinkClicked($event)" id="headerLink">{{translate[reApiService.reType]}}</a>{{" תרצו לחפש?"}}
+                (click)="onHeaderLinkClicked($event)"
+                id="headerLink">{{translate[reApiService.reType]}}</a>{{" תרצו לחפש?"}}
             </h5>
           </td>
         </tr>
@@ -17,8 +18,8 @@
           <div class="headerLinkOption Headline">{{'ניתן לחפש גם:'}} </div>
 
           <div *ngFor="let link of reTypes" (click)="onClickREtype(link)"
-            [ngClass]="reApiService.reType!==link?'headerLinkOption links':'headerLinkOption links chosen'"><a
-              >{{translate[link]}}</a></div>
+            [ngClass]="reApiService.reType!==link?'headerLinkOption links':'headerLinkOption links chosen'">
+            <a>{{translate[link]}}</a></div>
         </div>
 
         <tr [ngClass]="'labels'">
@@ -39,8 +40,8 @@
         </tr>
         <tr [ngClass]="'inputs'">
           <td>
-            <input  placeholder="לדוגמא: פלורנטין" formControlName="address" type="text" autocomplete="something-new"
-              (input)="onChangeAddress($event)" (click)="onChangeAddress($event)"/>
+            <input placeholder="לדוגמא: פלורנטין" formControlName="address" type="text" autocomplete="something-new"
+              (input)="onChangeAddress($event)" (click)="onChangeAddress($event)" />
           </td>
           <td (click)="onClickPropertyType($event)">
             <div [ngClass]="'property-type'">
@@ -63,7 +64,7 @@
           </td>
           <td>
             <button [ngClass]="'advanced-search'" type="button">
-              <!-- <i class="fas fa-plus-circle"></i> -->
+      
               <img src="https://img.icons8.com/pastel-glyph/64/000000/plus.png" width="15px">{{' חיפוש מתקדם'}}
             </button>
           </td>
@@ -75,26 +76,31 @@
     </div>
   </form>
   <div class="row">
-    <div *ngIf="isAddressClicked" (clickOutside)="onClickOutSideBar($event,'adrressesOptions')" class="adrresses-options">
+    <div *ngIf="isAddressClicked" (clickOutside)="onClickOutSideBar($event,'adrressesOptions')"
+      class="adrresses-options">
       <span>{{'חפשו אזור, עיר, שכונה או רחוב'}}</span>
       <div class="">
         <table>
           <tr>
-            <th colspan="2" >{{translate['city']}}</th>
+            <th colspan="2">{{translate['city']}}</th>
           </tr>
           <tr *ngFor="let address of addresses.cities">
-            <td (click)="onChooseAddress(address.city,$event)">{{splitBySearchExp(address.city,address.option)[0]}}<b>{{address.option}}</b>{{splitBySearchExp(address.city,address.option)[1]}}</td>
-            <td  ><span>{{translate['city']}}</span></td>
+            <td (click)="onChooseAddress(address.city,$event)">
+              {{splitBySearchExp(address.city,address.option)[0]}}<b>{{address.option}}</b>{{splitBySearchExp(address.city,address.option)[1]}}
+            </td>
+            <td><span>{{translate['city']}}</span></td>
           </tr>
 
           <tr>
-            <th colspan="2" >{{translate['street']}}</th>
+            <th colspan="2">{{translate['street']}}</th>
           </tr>
           <tr *ngFor="let address of addresses.streets">
             <!-- <td (click)="onChooseAddress(address.street+', '+address.city,$event)">{{address.street+", "+address.city}}</td> -->
 
-            <td (click)="onChooseAddress(address.street+', '+address.city,$event)">{{splitBySearchExp(address.street,address.option)[0]}}<b>{{address.option}}</b>{{splitBySearchExp(address.street,address.option)[1]+", "+address.city}}</td>
-            <td  ><span>{{translate['street']}}</span></td>
+            <td (click)="onChooseAddress(address.street+', '+address.city,$event)">
+              {{splitBySearchExp(address.street,address.option)[0]}}<b>{{address.option}}</b>{{splitBySearchExp(address.street,address.option)[1]+", "+address.city}}
+            </td>
+            <td><span>{{translate['street']}}</span></td>
 
           </tr>
 
