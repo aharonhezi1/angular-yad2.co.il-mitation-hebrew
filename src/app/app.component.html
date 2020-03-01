@@ -1,4 +1,4 @@
-<div id="app" (click)="onClickApp()">
+<div id="app" >
   <div [ngStyle]="{'width': '100vw',
   'height': '75px',
   'backgroundColor':' #f57028'}"></div>
@@ -6,6 +6,9 @@
 
   <div [ngClass]="'filter'">
     <app-re-filter></app-re-filter>
+  </div>
+  <div class="advance" *ngIf="isAdvanceSearchClicked">
+    <app-advance-filter></app-advance-filter>
   </div>
   <div class="sort">
     <app-re-sort></app-re-sort>

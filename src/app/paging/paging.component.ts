@@ -43,7 +43,7 @@ export class PagingComponent implements OnInit {
     }
   }
   ngOnInit() {
-    this.reApiService.pageNumber.subscribe(num => {
+    this.reApiService.pageNumberSubject.subscribe(num => {
       this.pageNumber = num;
       console.log('createPagesArray');
       this.createPagesArray();

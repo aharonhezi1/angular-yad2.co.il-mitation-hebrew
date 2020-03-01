@@ -29,45 +29,45 @@ export class ReListComponent implements OnInit, OnDestroy {
       console.log(this.reList);
 
     });
-    this.reService.sortOptions.subscribe(sort => {
-      this.reList = this.reApiService.reListSubject.value;
+    // this.reService.sortOptions.subscribe(sort => {
+    //   this.reList = this.reApiService.reListSubject.value;
 
-      if (!!this.reList) {
-        this.reList = this.reList.filter(item => {
-          if (sort.isOnlyWithPic) {
-            if (sort.isOnlyWithPrice) {
-              return !!item.price && !!item.pictures.length;
-            } else {
-              return !!item.pictures.length;
-            }
-          } else {
-            if (sort.isOnlyWithPrice) {
-              return !!item.price;
-            } else {
-              return item;
-            }
-          }
-        });
-        if (this.sortLastOptions.sortBy !== sort.sortBy) {
-          switch (sort.sortBy) {
-            case 'byDate':
-              this.reList = this.sortByKey(this.reList, 'updatedAt');
+    //   if (!!this.reList) {
+    //     this.reList = this.reList.filter(item => {
+    //       if (sort.isOnlyWithPic) {
+    //         if (sort.isOnlyWithPrice) {
+    //           return !!item.price && !!item.pictures.length;
+    //         } else {
+    //           return !!item.pictures.length;
+    //         }
+    //       } else {
+    //         if (sort.isOnlyWithPrice) {
+    //           return !!item.price;
+    //         } else {
+    //           return item;
+    //         }
+    //       }
+    //     });
+    //     if (this.sortLastOptions.sortBy !== sort.sortBy) {
+    //       switch (sort.sortBy) {
+    //         case 'byDate':
+    //           this.reList = this.sortByKey(this.reList, 'updatedAt');
 
-              break;
-            case 'fromLowPrice':
-              this.reList = this.sortByKey(this.reList, 'price');
-              break;
-            case 'fromHighPirce':
-              this.reList = this.sortByKey(this.reList, 'price', -1);
-              break;
+    //           break;
+    //         case 'fromLowPrice':
+    //           this.reList = this.sortByKey(this.reList, 'price');
+    //           break;
+    //         case 'fromHighPirce':
+    //           this.reList = this.sortByKey(this.reList, 'price', -1);
+    //           break;
 
-          }
-        }
-        //this.reList = this.sortByKey(this.reList, 'price', -1)
-      }
-      this.sortLastOptions = this.reService.sortOptions.value;
+    //       }
+    //     }
+    //     //this.reList = this.sortByKey(this.reList, 'price', -1)
+    //   }
+    //   this.sortLastOptions = this.reService.sortOptions.value;
 
-    });
+    // });
 
 
   }

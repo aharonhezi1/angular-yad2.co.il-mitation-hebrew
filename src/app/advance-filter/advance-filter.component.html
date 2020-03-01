@@ -1,0 +1,59 @@
+<div class="advance-container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="">
+        <div class="">{{'מאפייני דירה'}}</div>
+     <!--    <div formArrayName="characteristics" class="row">
+            <div class="characteristics sub-advance-container" *ngFor="let character of getCharacteristics(); let i = index;"><div [formGroupName]="i" (click)="onCheckCharacteristic(character.characteristic,i)" class="character">
+                    <app-check-box [isChecked]="character.value" [option]="character.characteristic"></app-check-box>
+            </div></div>
+
+        </div>-->
+        <div class="row">
+            <div class="characteristics sub-advance-container" *ngFor="let character of characteristics"><div (click)="onCheckCharacteristic(character)" class="character">
+                    <app-check-box  [isChecked]="characteristicsChecked.includes(character)" [option]="character"></app-check-box>
+            </div></div>
+
+        </div> 
+        <hr>
+        <div class="inputs-container sub-advance-container">
+            <div class="col-4">
+                <div class="row">{{'קומה'}}</div>
+                <div class="row">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="row">{{'גודל דירה (במ"ר)'}}</div>
+                <div class="row">
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </div>
+
+            </div>
+            <div class="col-xs-3">
+                <div class="">{{'תאריך כניסה'}}</div>
+                <div class=""><input class="inpt" type="date" placeholder="החל מ- הזינו תאריך"></div>
+            </div>
+            <div class="col-3">
+                <div class="row"><app-check-box></app-check-box>{{'כניסה מיידית'}}</div>
+            </div>
+
+        </div>
+        <hr>
+        <div class="row sub-advance-container">
+            <div class="col">
+                <div class="">{{'חיפוש חופשי'}}</div>
+                <div class=""><input type="text"></div>
+            </div>
+        </div>
+        <hr>
+        <div class="buttons row sub-advance-container">
+            <div class=""></div>
+            <button type="submit" class="search-button">{{'חיפוש'}}</button>
+            <div class="clear">{{'נקה'}}</div>
+        </div>
+
+    </div>
+</form>
+</div>

@@ -1,18 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { ReApiService } from './re-api.service';
+import { ReService } from './re.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  constructor( private reApiService:ReApiService){
+export class AppComponent implements OnInit {
+  constructor(private reApiService: ReApiService, private reService: ReService) {
+  }
+  isAdvanceSearchClicked = false;
+  ngOnInit(): void {
+    this.reService.isAdvanceSearchClickedSubject.subscribe(isCkicked => {
+      this.isAdvanceSearchClicked = isCkicked;
+    });
+  }
 
-  }
-  title = 'yad2-imitation';
-  onClickApp(){
-    this.reApiService. closeBars.next(false);
-  }
+  // onClickApp(){
+  //   this.reApiService.closeBars.next(false);
+  // }
 }

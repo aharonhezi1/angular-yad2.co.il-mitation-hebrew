@@ -13,10 +13,8 @@ export const translate = {
 	floor: 'קומה',
 	squaremeter: 'מ"ר',
 	rooms: 'חדרים',
-
 	meetingRoom: 'חדר ישיבות',
 	rentedTill: ' מושכר עד',
-
 	airConditioner: 'מיזוג אויר',
 	warhouse: 'מחסן',
 	balcony: 'מרפסת',
@@ -25,6 +23,9 @@ export const translate = {
 	bars: 'סורגים',
 	elevator: 'מעלית',
 	parking: 'חניה',
+	'pandor dors':'דלתות פנדור',
+	'furnished':'מרוהטת',
+	'exlusive':'בבלעדיות',
 	furniture: 'ריהוט',
 	description: 'תיאור',
 	address: 'כתובת',

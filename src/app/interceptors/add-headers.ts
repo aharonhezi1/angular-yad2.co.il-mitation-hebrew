@@ -6,7 +6,7 @@ import { ReApiService } from '../re-api.service';
 @Injectable({
     providedIn: 'root'
 })
-export class AddPageHeaderInterceptor implements HttpInterceptor {
+export class AddHeadersInterceptor implements HttpInterceptor {
     constructor(private reApiService: ReApiService) {
 
     }

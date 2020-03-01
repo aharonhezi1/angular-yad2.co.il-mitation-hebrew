@@ -10,8 +10,10 @@ import { ReListComponent } from './re-list/re-list.component';
 import { ItemComponent } from './re-list/item/item.component';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { ReSortComponent } from './re-sort/re-sort.component';
-import { AddPageHeaderInterceptor } from './interceptors/add-page-header';
+import { AddHeadersInterceptor } from './interceptors/add-headers';
 import { PagingComponent } from './paging/paging.component';
+import { AdvanceFilterComponent } from './advance-filter/advance-filter.component';
+import { CheckBoxComponent } from './utils/check-box/check-box.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { PagingComponent } from './paging/paging.component';
     ReListComponent,
     ItemComponent,
     ReSortComponent,
-    PagingComponent
+    PagingComponent,
+    AdvanceFilterComponent,
+    CheckBoxComponent
   ],
   imports: [
     HttpClientModule,
@@ -31,7 +35,7 @@ import { PagingComponent } from './paging/paging.component';
     FormsModule,
     ClickOutsideModule
   ],
-  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddPageHeaderInterceptor, multi: true }],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: AddHeadersInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

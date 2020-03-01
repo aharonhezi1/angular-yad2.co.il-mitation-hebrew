@@ -135,7 +135,9 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
       this.form.controls.propertyType.setValue(this.propertyTypeOption[this.propertyTypesChecked[0]]);
     }
   }
-
+onClickAdvanceSerch(){
+  this.reService.isAdvanceSearchClickedSubject.next(!this.reService.isAdvanceSearchClickedSubject.value);
+}
   onSubmit() {
     let formValue = this.form.value;
     formValue = {
@@ -143,8 +145,7 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
       address: this.isAddressChosen ? formValue.address : '',
       maxRooms: this.chosenRooms.max ? this.chosenRooms.max : 12,
       minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0
-    };
-    console.log();
+    };   
     this.reApiService.getFilterRE(formValue);
   }
   populateRoomsArray() {
@@ -219,6 +220,11 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
     this.isHeaderLinkClicked = false;
 
   }
+  onFormValueChange() {
+    this.form.valueChanges.subscribe(value => {
+      this.reApiService.searchDetails = value;
+    })
+  }
   ngOnInit() {
     this.form = this.formBuilder.group({
       address: '',
@@ -227,6 +233,7 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
       minPrice: '',
       maxPrice: ''
     });
+    this.onFormValueChange()
     this.populateRoomsArray();
 
 

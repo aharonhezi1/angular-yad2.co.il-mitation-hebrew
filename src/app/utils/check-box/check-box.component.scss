@@ -1,0 +1,78 @@
+@import '../../../styles/varbs.scss';
+
+.label-cbx {
+    user-select: none;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+  
+  .label-cbx input:checked+.checkbox {
+    border-color: $theme-color;
+  }
+  
+  .label-cbx input:checked+.checkbox svg path {
+    fill: $theme-color;
+  }
+  
+  .label-cbx input:checked+.checkbox svg polyline {
+    stroke-dashoffset: 0;
+  }
+  
+  .label-cbx:hover .checkbox svg path {
+    stroke-dashoffset: 0;
+  }
+  
+  .label-cbx .checkbox {
+    position: relative;
+    top: 2px;
+    float: right;
+    margin-left: 8px; //turn back
+    width: 20px;
+    height: 20px;
+    border: 2px solid #C8CCD4;
+    border-radius: 3px;
+  }
+  
+  .label-cbx .checkbox svg {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+  }
+  
+  .label-cbx .checkbox svg path {
+    fill: none;
+    stroke: $theme-color;
+    stroke-width: 2;
+  
+    stroke-dasharray: 71px;
+    stroke-dashoffset: 71px;
+  
+  }
+  
+  .label-cbx .checkbox svg polyline {
+    fill: none;
+    stroke: #FFF;
+    stroke-width: 2;
+    stroke-dasharray: 18px;
+    stroke-dashoffset: 18px;
+  
+  }
+  
+  .label-cbx>span {
+    pointer-events: none;
+    vertical-align: middle;
+  }
+  
+  .cntr {
+    flex-basis: 5%;
+    margin-right: 10px;
+    margin-top: 10px;
+  }
+  
+  .invisible {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }

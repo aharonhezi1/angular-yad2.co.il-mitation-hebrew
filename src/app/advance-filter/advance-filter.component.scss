@@ -1,0 +1,73 @@
+@import '../../styles/varbs.scss';
+
+.advance-container{
+    padding: 2rem 2.5rem 1rem 2.5rem;
+    z-index: 98;
+    position: absolute;
+    background-color: white;
+    -webkit-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
+    -moz-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
+    box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
+    width: 60rem;
+    height: 29.6rem;
+}
+.sub-advance-container{
+    padding: 0 1rem 0 1rem;
+
+}
+.characteristics{
+    display: flex; 
+    flex-wrap:wrap;
+    justify-content: space-between;
+
+}
+.character{
+    width: 9rem;
+    padding: 0.625rem 0  0.625rem 0 ;
+    //text-align: center;
+}
+.inputs-container{
+    display: flex;
+    align-items:flex-end !important;
+   // flex-wrap:wrap;
+    justify-content: space-between;
+
+}
+.box{
+    border: 1px solid gray;
+    width: 7.5rem;
+    height: 2.5rem;
+    margin-left: 0.4rem;
+   // display: inline
+}
+.buttons{
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+
+    
+}
+.search-button {
+    background-color: $theme-color;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    padding:.5rem 1rem .5rem 1rem;
+    //margin-right: 25rem;
+    cursor: pointer;
+    &:hover{
+      background-color: darken($color: $theme-color, $amount: 20%);
+    }
+}
+.inpt{
+    height: 2.5rem;
+
+}
+.clear{
+
+}
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}
