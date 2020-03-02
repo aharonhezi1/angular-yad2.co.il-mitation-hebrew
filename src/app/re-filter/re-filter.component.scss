@@ -1,13 +1,13 @@
 @import '../../styles/varbs.scss';
 
 .filterContainer {
-  padding: 20px;
-  width: 960px;
-  height: 153px;
+  padding: 1.25rem;
+  width: 60rem;
+  height: 9.5rem;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-  -moz-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-  box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
+  -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
 }
 input{
   text-decoration: none;
@@ -24,24 +24,24 @@ input{
 }
 
 .labels td label {
-  font-size: 15px;
-  margin-bottom: 3px;
+  font-size: .94rem;
+  margin-bottom: .19rem;
 }
 
 .property-type {
-  border: 1px solid gray;
-  width: 150px;
-  height: 40px;
+  border: .06rem solid gray;
+  width: 9.4rem;
+  height: 2.5rem;
 
   img {
-    height: 10px;
-    width: 10px;
+    height: .625rem;
+    width: .625rem;
   }
 
   input {
-    height: 35px;
+    height: 2.4rem;
     border: transparent;
-    width: 120px;
+    width: 7.5rem;
   }
 }
 
@@ -49,28 +49,28 @@ input{
 button,
 span,
 input {
-  height: 40px;
-  font-size: 13px;
+  height: 2.5rem;
+  font-size: .8rem;
 }
 
 .headerLinkOption {
   background-color: #FFFFFF;
   font-weight: bold;
   text-align: center;
-  font-size: 14px;
-  width: 220px;
+  font-size: .9rem;
+  width: 13.75rem;
 
   &.contanier {
     z-index: 99;
     position: absolute;
-    -webkit-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-    -moz-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-    box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
+    -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+    -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+    box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
   }
 
   &.links {
-    height: 41px;
-    padding: 10px;
+    height: 2.5rem;
+    padding: .625rem;
 
     &:hover {
       background-color: #fef0e4;
@@ -96,8 +96,8 @@ input {
   background-color: $theme-color;
   color: white;
   font-weight: bold;
-  font-size: 13px;
-  padding: 0 15px 0 15px;
+  font-size: .8rem;
+  padding: 0 .94rem 0 .94rem;
   &:hover{
     background-color: darken($color: $theme-color, $amount: 20%);
   }
@@ -105,9 +105,11 @@ input {
 }
 
 .advanced-search {
-  line-height: 0.8;
+//  height: 0.8;
   background-color: #eeeeee;
-  font-size: 13px;
+  font-size: .8rem;
+  //padding: 0 .94rem 0 .94rem;
+
  &:hover{
    background-color: darken($color: #eeeeee, $amount: 20%);
  }
@@ -115,8 +117,8 @@ input {
 }
 
 .price-input {
-  border: 1px solid gray;
-  height: 40px;
+  border: .06rem solid gray;
+  height: 2.5rem;
   margin-bottom: 0;
   padding-bottom: 0;
   ;
@@ -124,46 +126,46 @@ input {
   input {
     padding-bottom: 0;
 
-    height: 35px;
+    height: 2.5rem;
     border: transparent;
     outline: none;
-    width: 110px;
+    width: 6.9rem;
   }
 }
 
 .rooms-num {
-  border: 1px solid gray;
-  height: 40px;
-  width: 100px;
+  border: .06rem solid gray;
+  height: 2.5rem;
+  width: 6.25rem;
 
   input {
     padding-bottom: 0;
-    width: 70px;
-    height: 35px;
+    width: 4.4rem;
+    height: 2.5rem;
     border: transparent;
     outline: none;
   }
 
   img {
-    height: 10px;
-    width: 10px;
+    height: .625rem;
+    width: .625rem;
   }
 }
 
 .property-type-options {
   background-color: #FFFFFF;
-  -webkit-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-  -moz-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-  box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-  margin-right: 220px;
-  width: 210px;
-  height: 226px;
+  -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  margin-right: 13.75rem;
+  width: 13.1rem;
+  height: 14.1rem;
   z-index: 99 !important;
   position: relative;
 
   &.moreProperties {
-    width: 750px;
-    height: 200px !important;
+    width: 47rem;
+    height: 12.5rem !important;
 
   }
 
@@ -171,27 +173,27 @@ input {
     color: $theme-color;
     bottom: 0;
     position: absolute;
-    padding: 0 20px 15px 0;
+    padding: 0 1.25rem .94rem 0;
 
   }
 }
 .adrresses-options {
-  margin-right: 15px;
-  border: 1px solid #ccc !important;
+  margin-right: .94rem;
+  border: .06rem solid #ccc !important;
   border-top: none !important;
   z-index: 99 !important;
-  width: 448px !important;
+  width: 28rem !important;
   background-color: #ffffff;
 span,th,td{
-  padding: 0 10px 0 10px;
+  padding: 0 .625rem 0 .625rem;
 
 }
 
   th {
     background-color: #eeeeee;
     // 
-    width: 448px !important;
-    height: 40px;
+    width: 28rem !important;
+    height: 2.5rem;
     font-size: small;
 
   }
@@ -199,8 +201,8 @@ span,th,td{
   td {
     font-size: small;
 
-    width: 448px !important;
-    height: 30px;
+    width: 28rem !important;
+    height: 1.9rem;
     background-color: #ffffff;
 span{
   float: left;
@@ -211,7 +213,7 @@ span{
 .flex-container {
   display: flex;
   flex-direction: column !important;
-  height: 180px !important;
+  height: 11.25rem !important;
 
   &.moreProperties {
     flex-wrap: wrap;
@@ -223,19 +225,19 @@ span{
 
 
 .rooms-options {
-  margin-right: 372px;
-  width: 180px;
+  margin-right: 23.25rem;
+  width: 11.25rem;
   height: 80px;
   background-color: #FFFFFF;
-  -webkit-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-  -moz-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-  box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
+  -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
   z-index: 99 !important;
-  padding: 15px;
+  padding: .94rem;
 
   img {
-    height: 10px;
-    width: 10px;
+    height: .625rem;
+    width: .625rem;
   }
 
   table {
@@ -243,28 +245,28 @@ span{
   }
 
   th {
-    border: 1px solid gray;
-    width: 75px;
+    border: .06rem solid gray;
+    width: 4.7rem;
   }
 
   td {
-    width: 75px;
+    width: 4.7rem;
   }
 
   .roomSelect {
-    border: 1px solid gray;
+    border: .06rem solid gray;
     list-style-type: none;
-    height: 320px;
-    width: 75px;
+    height: 20rem;
+    width: 4.7rem;
     display: block;
     overflow: scroll;
     background-color: #FFFFFF;
     overflow-x: hidden;
-    padding-right: 25px;
+    padding-right: 1.56rem;
 
     li {
-      width: 75px;
-      height: 40px;
+      width: 4.7rem;
+      height: 2.5rem;
 
       &:hover {
         background-color: #e4dede;
@@ -274,8 +276,8 @@ span{
 
   input {
     padding-bottom: 0;
-    width: 50px;
-    height: 35px;
+    width: 3.12rem;
+    height: 2.9rem;
     border: transparent;
     outline: none;
   }
@@ -306,19 +308,19 @@ span{
 
 .label-cbx .checkbox {
   position: relative;
-  top: 2px;
+  top: .13rem;
   float: right;
-  margin-left: 8px; //turn back
-  width: 20px;
-  height: 20px;
-  border: 2px solid #C8CCD4;
-  border-radius: 3px;
+  margin-left: .5rem; //turn back
+  width: 1.25rem;
+  height: 1.25rem;
+  border: .13rem solid #C8CCD4;
+  border-radius: .19rem;
 }
 
 .label-cbx .checkbox svg {
   position: absolute;
-  top: -2px;
-  right: -2px;
+  top: -.13rem;
+  right: -.13rem;
 }
 
 .label-cbx .checkbox svg path {
@@ -326,8 +328,8 @@ span{
   stroke: $theme-color;
   stroke-width: 2;
 
-  stroke-dasharray: 71px;
-  stroke-dashoffset: 71px;
+  stroke-dasharray: 4.44rem;
+  stroke-dashoffset: 4.44rem;
 
 }
 
@@ -335,8 +337,8 @@ span{
   fill: none;
   stroke: #FFF;
   stroke-width: 2;
-  stroke-dasharray: 18px;
-  stroke-dashoffset: 18px;
+  stroke-dasharray: 1.12rem;
+  stroke-dashoffset: 1.12rem;
 
 }
 
@@ -347,8 +349,8 @@ span{
 
 .cntr {
   flex-basis: 5%;
-  margin-right: 10px;
-  margin-top: 10px;
+  margin-right: .625rem;
+  margin-top: .625rem;
 }
 
 .invisible {

@@ -24,19 +24,19 @@
   
   .label-cbx .checkbox {
     position: relative;
-    top: 2px;
+    top: .13rem;
     float: right;
-    margin-left: 8px; //turn back
-    width: 20px;
-    height: 20px;
-    border: 2px solid #C8CCD4;
-    border-radius: 3px;
+    margin-left: .5rem; //turn back
+    width: 1.25rem;
+    height: 1.25rem;
+    border: .13rem solid #C8CCD4;
+    border-radius: .19rem;
   }
   
   .label-cbx .checkbox svg {
     position: absolute;
-    top: -2px;
-    right: -2px;
+    top: -.13rem;
+    right: -.13rem;
   }
   
   .label-cbx .checkbox svg path {
@@ -44,8 +44,8 @@
     stroke: $theme-color;
     stroke-width: 2;
   
-    stroke-dasharray: 71px;
-    stroke-dashoffset: 71px;
+    stroke-dasharray: 4.44rem;
+    stroke-dashoffset: 4.44rem;
   
   }
   
@@ -53,8 +53,8 @@
     fill: none;
     stroke: #FFF;
     stroke-width: 2;
-    stroke-dasharray: 18px;
-    stroke-dashoffset: 18px;
+    stroke-dasharray: 1.12rem;
+    stroke-dashoffset: 1.12rem;
   
   }
   
@@ -65,8 +65,8 @@
   
   .cntr {
     flex-basis: 5%;
-    margin-right: 10px;
-    margin-top: 10px;
+    margin-right: .625rem;
+    margin-top: .625rem;
   }
   
   .invisible {

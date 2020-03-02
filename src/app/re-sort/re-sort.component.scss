@@ -29,7 +29,7 @@
 
 
     & .click {
-        border: 1px solid $theme-color;
+        border: .06rem solid $theme-color;
         color: $theme-color;
 
         img {
@@ -40,7 +40,7 @@
     }
 
     &.box {
-        border: 1px solid gray;
+        border: .06rem solid gray;
         padding: .625rem .625rem .625rem 1rem;
         background-color: white;
         color: black;
@@ -50,7 +50,7 @@
 
 
         img {
-            padding-left: 4px;
+            padding-left: .25rem;
         }
 
         &.sort-by {
@@ -83,21 +83,21 @@
 
     margin-left: 1rem;
     background-color: transparent;
-    height: 20px;
-    width: 20px;
+    height: 1.25rem;
+    width: 1.25rem;
     border-radius: 50%;
     display: flex;
 
-    border: 2px solid $theme-color;
+    border: .13rem solid $theme-color;
 
     &.off {
-        border: 2px solid gray;
+        border: .13rem solid gray;
     }
 }
 
 .dot {
-    height: 16px;
-    width: 16px;
+    height: 1rem;
+    width: 1rem;
     background-color: $theme-color;
     border-radius: 50%;
     // display: inline-block;
@@ -114,5 +114,5 @@
 }
 
 .optionsLabel {
-    margin-bottom: 10px;
+    margin-bottom: .625rem;
 }

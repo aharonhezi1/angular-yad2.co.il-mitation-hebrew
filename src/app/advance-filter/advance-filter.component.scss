@@ -5,9 +5,9 @@
     z-index: 98;
     position: absolute;
     background-color: white;
-    -webkit-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-    -moz-box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
-    box-shadow: 3px 2px 4px 0px rgba(214, 214, 214, 1);
+    -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+    -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+    box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
     width: 60rem;
     height: 29.6rem;
 }
@@ -34,7 +34,7 @@
 
 }
 .box{
-    border: 1px solid gray;
+    border: .06rem solid gray;
     width: 7.5rem;
     height: 2.5rem;
     margin-left: 0.4rem;
@@ -51,7 +51,7 @@
     background-color: $theme-color;
     color: white;
     font-weight: bold;
-    font-size: 13px;
+    font-size: .8rem;
     padding:.5rem 1rem .5rem 1rem;
     //margin-right: 25rem;
     cursor: pointer;
@@ -63,9 +63,7 @@
     height: 2.5rem;
 
 }
-.clear{
 
-}
 
 input[type="date"]::-webkit-inner-spin-button {
     display: none;

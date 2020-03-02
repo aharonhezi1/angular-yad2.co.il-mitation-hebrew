@@ -6,10 +6,10 @@ th {
 }
 
 .pictures-adress {
-  width: 345px;
-  padding-right: 5px;
+  width: 21.56rem;
+  padding-right: .31rem;
   #address{
-    padding-right: 20px;
+    padding-right: 1.25rem;
   }
   p{
     font-size: small;
@@ -17,11 +17,11 @@ th {
 }
 
 .about {
-  padding: 0 10px 0 10px;
-  width: 186px;
+  padding: 0 .625rem 0 .625rem;
+  width: 11.62rem;
   text-align: center;
 table{
-  margin-right: 30px;
+  margin-right: 1.9rem;
 }
 
     .footer {
@@ -31,19 +31,19 @@ table{
 
 
 .price {
-  width: 182px;
+  width: 11.37rem;
   text-align: left; //turn back ???
-  padding-left: 5px //turn back ???
+  padding-left: .31rem //turn back ???
  
 }
 
 .table-item{
-  border: 1px solid rgb(218, 218, 230) !important;
+  border: .06rem solid rgb(218, 218, 230) !important;
   border-collapse: collapse;
 
   background-color: #fdf8c5 !important;
 
-  height: 86px;
+  height: 5.37rem;
 
 
 
@@ -51,31 +51,31 @@ table{
 
 .table-item td {
 
-  border: 1px solid rgb(218, 218, 230) !important;
+  border: .06rem solid rgb(218, 218, 230) !important;
 
 }
 
 .table-item-open {
-  border: 1px solid rgb(218, 218, 230) !important;
+  border: .06rem solid rgb(218, 218, 230) !important;
   border-collapse: collapse;
 
   background-color: #fdf8c5 !important;
-  width: 715px;
-  height: 137px;
+  width: 44.69rem;
+  height: 8.56rem;
 
 }
 
 .img-open {
-  padding-right: 5px
+  padding-right: .31rem
 }
 
 .address-open {
-  width: 345px;
+  width: 21.56rem;
 }
 
 .about-open {
   text-align: center;
-  width: 186px;
+  width: 11.62rem;
 }
 
 .about-label-open {
@@ -83,18 +83,18 @@ table{
 }
 
 .price-open {
-  width: 182px;
+  width: 11.37rem;
   text-align: left; //turn back
-  padding-left: 5px //turn back
+  padding-left: .31rem //turn back
 }
 
 .detailsBoxStyle {
   width:500px;
   background-color: white;
  
- // margin-right: 15px
+ // margin-right: .94rem
  &-child{
-  margin-right: 15px;
+  margin-right: .94rem;
   font-size: small;
  }
   &.header{
@@ -111,7 +111,7 @@ table{
 ;
 
 .aboutStyle {
-  padding: 10px 50px 10px 10px
+  padding: .625rem 3.12rem .625rem .625rem
 }
 
 .aboutDetailStyle {
@@ -125,11 +125,11 @@ table{
 }
 
 .propertyExtraDetails {
-  width: 120px;
+  width: 7.5rem;
  // font-weight: bold;
     font-size: .80rem;
   &.exist {
-    width: 120px;
+    width: 7.5rem;
   
     color: gray
   }

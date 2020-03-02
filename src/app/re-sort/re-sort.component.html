@@ -7,8 +7,8 @@
             id="price">{{"₪ עם מחיר"}}</span>
         <span id="picture" (click)="onClick('picture')"
             [ngClass]="!isShowAddsWithPicture?'item box showAdds':'item box showAdds click'"><img
-                src="{{!isShowAddsWithPicture?picUrl:picOrangeUrl}}" width="15" />{{" עם תמונה"}}</span></div>
-    <div class="item break"><span class="item box"><img src="{{mapPicUrl}}" width="18" />{{"   תצוגת מפה  "}}</span>
+                src="{{!isShowAddsWithPicture?picUrl:picOrangeUrl}}" width="15px" />{{" עם תמונה"}}</span></div>
+    <div class="item break"><span class="item box"><img src="{{mapPicUrl}}" width="18px" />{{"   תצוגת מפה  "}}</span>
     </div>
 </div>
 <div *ngIf="isShowSortBy" class="sortBy-options" (clickOutside)="onClickOutsideSortBy()">
