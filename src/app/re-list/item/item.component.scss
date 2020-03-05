@@ -6,7 +6,7 @@ th {
 }
 
 .pictures-adress {
-  width: 21.56rem;
+  width: 21.56*$width;
   padding-right: .31rem;
   #address{
     padding-right: 1.25rem;
@@ -18,7 +18,7 @@ th {
 
 .about {
   padding: 0 .625rem 0 .625rem;
-  width: 11.62rem;
+  width: 11.62*$width;
   text-align: center;
 table{
   margin-right: 1.9rem;
@@ -31,7 +31,7 @@ table{
 
 
 .price {
-  width: 11.37rem;
+  width: 11.37*$width;
   text-align: left; //turn back ???
   padding-left: .31rem //turn back ???
  
@@ -60,7 +60,7 @@ table{
   border-collapse: collapse;
 
   background-color: #fdf8c5 !important;
-  width: 44.69rem;
+  width: 44.69*$width;
   height: 8.56rem;
 
 }
@@ -70,12 +70,12 @@ table{
 }
 
 .address-open {
-  width: 21.56rem;
+  width: 21.56*$width;
 }
 
 .about-open {
   text-align: center;
-  width: 11.62rem;
+  width: 11.62*$width;
 }
 
 .about-label-open {
@@ -83,13 +83,13 @@ table{
 }
 
 .price-open {
-  width: 11.37rem;
+  width: 11.37*$width;
   text-align: left; //turn back
   padding-left: .31rem //turn back
 }
 
 .detailsBoxStyle {
-  width:500px;
+  width:31.25*$width;
   background-color: white;
  
  // margin-right: .94rem
@@ -125,11 +125,11 @@ table{
 }
 
 .propertyExtraDetails {
-  width: 7.5rem;
+  width: 7.5*$width;
  // font-weight: bold;
     font-size: .80rem;
   &.exist {
-    width: 7.5rem;
+    width: 7.5*$width;
   
     color: gray
   }
@@ -145,4 +145,16 @@ table{
 
 }
 
+}
+.smallPic {
+  height: 4.12rem;
+  width:6.87*$width;
+}
+
+.bigPic {
+  height: 7.31rem;
+  width: 12.2*$width;
+}
+.item-open{
+  width: 12.2*$width;
 }

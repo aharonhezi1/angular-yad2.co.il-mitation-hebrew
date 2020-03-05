@@ -12,7 +12,7 @@ export class PagingComponent implements OnInit {
   orangeArrowLink = environment.apiUrl + '/icons/orangeArrow.png';
   pagesArray;
   Math = Math;
- 
+
   constructor(public reApiService: ReApiService) { }
 
   pageNumber;
@@ -26,21 +26,27 @@ export class PagingComponent implements OnInit {
     this.reApiService.getFilterRE();
   }
   createPagesArray() {
-    this.pagesArray = []
-    for (let i = 1; i <= Math.ceil(this.pageNumber); i++) {
+    this.pagesArray = [1]
+    for (let i = 2; i <= Math.floor(this.pageNumber); i++) {
       if (this.pageNumber > 9) {
         if ((i === Math.ceil(this.pageNumber) - 1 && i > this.reApiService.currentPage + 1) ||
           (this.reApiService.currentPage > 3 && i === 2)) {
           this.pagesArray.push('...');
           continue;
         }
-        if (this.reApiService.currentPage + 2 < i && i < this.reApiService.currentPage - 6) {
+        if ((((this.reApiService.currentPage + 2 < i) && i > 7) || i < this.reApiService.currentPage - 6)) {
           continue;
         }
       }
-
-      this.pagesArray.push(i + '');
+      if (i !== this.pageNumber) {
+        this.pagesArray.push(i + '');
+      }
     }
+    if (this.pageNumber > 1) {
+      this.pagesArray.push(Math.ceil(this.pageNumber))
+
+    }
+
   }
   ngOnInit() {
     this.reApiService.pageNumberSubject.subscribe(num => {

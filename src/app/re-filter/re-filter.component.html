@@ -43,8 +43,8 @@
             <input placeholder="לדוגמא: פלורנטין" formControlName="address" type="text" autocomplete="something-new"
               (input)="onChangeAddress($event)" (click)="onChangeAddress($event)" />
           </td>
-          <td (click)="onClickPropertyType($event)">
-            <div [ngClass]="'property-type'">
+          <td  [ngClass]="'property-type'" (click)="onClickPropertyType($event)">
+            <div>
               <input placeholder="בחרו סוגי נכסים" formControlName="propertyType" type="text"
                 autocomplete="something-new" />
               <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
@@ -57,15 +57,15 @@
               [ngStyle]="{'transform':isRoomsClicked ? 'rotate(180deg)':''}" />
           </td>
           <td [ngClass]="'price-input'">
-            <input placeholder="ממחיר" formControlName="minPrice" type="text" />
+            <input placeholder="ממחיר" formControlName="minPrice" type="number" />
           </td>
           <td [ngClass]="'price-input'">
-            <input placeholder="עד-מחיר" formControlName="maxPrice" type="text" />
+            <input placeholder="עד-מחיר" formControlName="maxPrice" type="number" />
           </td>
           <td>
             <button (click)="onClickAdvanceSerch()" [ngClass]="'advanced-search'" type="button">
       
-              <img src="https://img.icons8.com/pastel-glyph/64/000000/plus.png" width="15px">{{' חיפוש מתקדם'}}
+              <img class="icon" src="https://img.icons8.com/pastel-glyph/64/000000/plus.png" >{{' חיפוש מתקדם'}}
             </button>
           </td>
           <td>

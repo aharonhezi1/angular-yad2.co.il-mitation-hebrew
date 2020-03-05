@@ -2,12 +2,15 @@
 
 .filterContainer {
   padding: 1.25rem;
-  width: 60rem;
+  width: 60*$width;
   height: 9.5rem;
   background-color: #FFFFFF;
   -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
   -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
   box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+}
+.icon{
+  width:1*$width; ;
 }
 input{
   text-decoration: none;
@@ -30,18 +33,18 @@ input{
 
 .property-type {
   border: .06rem solid gray;
-  width: 9.4rem;
+  width: 9.4*$width;
   height: 2.5rem;
 
   img {
     height: .625rem;
-    width: .625rem;
+    width: .625*$width;
   }
 
   input {
     height: 2.4rem;
     border: transparent;
-    width: 7.5rem;
+    width: 7.5*$width;
   }
 }
 
@@ -58,7 +61,7 @@ input {
   font-weight: bold;
   text-align: center;
   font-size: .9rem;
-  width: 13.75rem;
+  width: 13.75*$width;
 
   &.contanier {
     z-index: 99;
@@ -90,6 +93,7 @@ input {
 
 
 }
+
 
 .search-button {
 
@@ -129,18 +133,18 @@ input {
     height: 2.5rem;
     border: transparent;
     outline: none;
-    width: 6.9rem;
+    width: 6.9*$width;
   }
 }
 
 .rooms-num {
   border: .06rem solid gray;
   height: 2.5rem;
-  width: 6.25rem;
+  width: 6.25*$width;
 
   input {
     padding-bottom: 0;
-    width: 4.4rem;
+    width: 4.4*$width;
     height: 2.5rem;
     border: transparent;
     outline: none;
@@ -148,7 +152,7 @@ input {
 
   img {
     height: .625rem;
-    width: .625rem;
+    width: .625*$width;
   }
 }
 
@@ -158,13 +162,13 @@ input {
   -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
   box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
   margin-right: 13.75rem;
-  width: 13.1rem;
+  width: 13.1*$width;
   height: 14.1rem;
   z-index: 99 !important;
   position: relative;
 
   &.moreProperties {
-    width: 47rem;
+    width: 47*$width;
     height: 12.5rem !important;
 
   }
@@ -182,7 +186,7 @@ input {
   border: .06rem solid #ccc !important;
   border-top: none !important;
   z-index: 99 !important;
-  width: 28rem !important;
+  width: 28*$width !important;
   background-color: #ffffff;
 span,th,td{
   padding: 0 .625rem 0 .625rem;
@@ -192,7 +196,7 @@ span,th,td{
   th {
     background-color: #eeeeee;
     // 
-    width: 28rem !important;
+    width: 28*$width !important;
     height: 2.5rem;
     font-size: small;
 
@@ -201,7 +205,7 @@ span,th,td{
   td {
     font-size: small;
 
-    width: 28rem !important;
+    width: 28*$width !important;
     height: 1.9rem;
     background-color: #ffffff;
 span{
@@ -226,7 +230,7 @@ span{
 
 .rooms-options {
   margin-right: 23.25rem;
-  width: 11.25rem;
+  width: 11.25*$width;
   height: 80px;
   background-color: #FFFFFF;
   -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
@@ -237,7 +241,7 @@ span{
 
   img {
     height: .625rem;
-    width: .625rem;
+    width: .625*$width;
   }
 
   table {
@@ -246,18 +250,18 @@ span{
 
   th {
     border: .06rem solid gray;
-    width: 4.7rem;
+    width: 4.7*$width;
   }
 
   td {
-    width: 4.7rem;
+    width: 4.7*$width;
   }
 
   .roomSelect {
     border: .06rem solid gray;
     list-style-type: none;
     height: 20rem;
-    width: 4.7rem;
+    width: 4.7*$width;
     display: block;
     overflow: scroll;
     background-color: #FFFFFF;
@@ -265,7 +269,7 @@ span{
     padding-right: 1.56rem;
 
     li {
-      width: 4.7rem;
+      width: 4.7*$width;
       height: 2.5rem;
 
       &:hover {
@@ -276,7 +280,7 @@ span{
 
   input {
     padding-bottom: 0;
-    width: 3.12rem;
+    width: 3.12*$width;
     height: 2.9rem;
     border: transparent;
     outline: none;
@@ -311,7 +315,7 @@ span{
   top: .13rem;
   float: right;
   margin-left: .5rem; //turn back
-  width: 1.25rem;
+  width: 1.25*$width;
   height: 1.25rem;
   border: .13rem solid #C8CCD4;
   border-radius: .19rem;

@@ -1,6 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 @import './styles/varbs.scss';
 html,body{
-  background-color: hsl(0, 0%, 97%) !important;
-
+  font-size: 80%;
  }
+ @media only screen and (max-width: 700px) {
+  html {
+    font-size:70%;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  html {
+    font-size: 100%;
+  }
+}

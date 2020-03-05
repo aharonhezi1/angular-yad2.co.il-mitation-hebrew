@@ -47,7 +47,7 @@ export class ReApiService {
     this.advanceQueryParams = this.turnObjToQueryParams(advanceDetails) || this.advanceQueryParams;
     const query = environment.apiUrl + this.reParams + this.reType +
       (!!this.queryParams || !!this.advanceQueryParams ? '?' : '') +
-      this.queryParams + (!!this.advanceQueryParams ? '&' : '') + this.advanceQueryParams;
+      this.queryParams + (!!this.advanceQueryParams && !!this.queryParams ? '&' : '') + this.advanceQueryParams;
     return this.http.get(query)
       .subscribe((list: any) => {
         this.reListSubject.next(list.re);

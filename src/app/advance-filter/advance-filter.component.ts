@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, FormArray } from '@angular/forms';
 import { ReApiService } from '../re-api.service';
+import * as moment from 'moment';
+import { ReService } from '../re.service';
+
 
 @Component({
   selector: 'app-advance-filter',
@@ -26,13 +29,46 @@ export class AdvanceFilterComponent implements OnInit {
     'furnished',
     'exlusive',
   ];
-  characteristicsChecked = [];
-  constructor(private formBuilder: FormBuilder, private reApiService: ReApiService) { }
+  @Input() characteristicsChecked = [];
+  @Input() isImmediatelyEntery = false;
+  floorArray = [];
+  minFloorArray = [];
+  maxFloorArray = [];
+
+  constructor(private formBuilder: FormBuilder, private reApiService: ReApiService, public reService: ReService) { }
+  onFloorClicked(maxOrMin,e) {
+    if (maxOrMin === 'max') {
+      this.reService.isMaxFloorClicked = !this.reService.isMaxFloorClicked;
+      this.reService.isMinFloorClicked = false;
+
+    } else {
+      this.reService.isMinFloorClicked = !this.reService.isMinFloorClicked;
+      this.reService.isMaxFloorClicked = false;
+
+    }
+    e.stopPropagation()
+  }
+  onChooseFloor(num, maxOrMin) {
+    if (maxOrMin === 'max') {
+      if (num) {
+        this.minFloorArray = this.floorArray.filter(n => n <= num);
+      } else {
+        this.minFloorArray = this.floorArray;
+      }
+      return this.form.controls.maxFloor.setValue(num ? num : '')
+    }
+    if (maxOrMin === 'min') {
+      if (num) {
+        this.maxFloorArray = this.floorArray.filter(n => n >= num);
+      } else {
+        this.maxFloorArray = this.floorArray;
+      }
+      return this.form.controls.minFloor.setValue(num ? num : '')
+    }
+  }
 
   onCheckCharacteristic(characteristic) {
-    // this.characteristicsFormArray = this.form.get('characteristics') as FormArray;
 
-    // this.characteristicsFormArray[index]={... this.characteristicsFormArray[index],value:true}
     if (this.characteristicsChecked.includes(characteristic)) {
       this.characteristicsChecked = this.characteristicsChecked.filter(ch => ch !== characteristic);
     } else {
@@ -41,37 +77,46 @@ export class AdvanceFilterComponent implements OnInit {
     this.form.controls.characteristics.setValue(this.characteristicsChecked)
   }
   onSubmit() {
-    const formValue = { ...this.form.value };//, characteristics: this.characteristicsChecked }
-    this.reApiService.getFilterRE(null, formValue);
-
+    this.reApiService.getFilterRE();
+  }
+  onClear(){
+    this.form.reset();
+    this.isImmediatelyEntery=false;
+    this.characteristicsChecked=[];
+  }
+  onImmediatelyEntery() {
+    this.isImmediatelyEntery = !this.isImmediatelyEntery;
+    this.form.controls.enteryDate.setValue(this.isImmediatelyEntery ? moment().format('YYYY-MM-DD') : '');
   }
   onFormValueChange() {
     this.form.valueChanges.subscribe(value => {
-      this.reApiService.advanceSearchDetails = value;
-    })
+      let formValue;
+      formValue = { ...value, enteryDate: value.enteryDate };
+      this.reApiService.advanceSearchDetails = formValue;
+    });
   }
-  // createFormCharacteristic(characteristic = '', value = false) {
-  //   return this.formBuilder.group({ characteristic, value });
-  // }
-  // getCharacteristics() {
-  //   const characteristics = this.form.get('characteristics').value
-  //   return this.form.get('characteristics').value;
-  // }
+  populateRoomsArray() {
+    for (let i = -1; i <= 17; i++) {
+      this.floorArray.push(i);
+    }
+    this.minFloorArray = this.floorArray;
+    this.maxFloorArray = this.floorArray;
+  }
+ 
   ngOnInit() {
     this.form = this.formBuilder.group({
       maxFloor: '',
       minFloor: '',
       maxSize: '',
       minSize: '',
-      enteryDate: null,
+      enteryDate: '',
       freeSearch: '',
-      characteristics: null // this.formBuilder.array([])
+      characteristics: ''
     });
-    this.onFormValueChange()
-    //  this.characteristicsFormArray = this.form.get('characteristics') as FormArray;
-    // this.characteristics.forEach(characteristic => {
-    //  this.characteristicsFormArray.push(this.createFormCharacteristic(characteristic));
-    // });
+    this.onFormValueChange();
+    this.populateRoomsArray()
+    this.reService.isMinFloorClicked = false;
+    this.reService.isMaxFloorClicked = false;
   }
 
 }

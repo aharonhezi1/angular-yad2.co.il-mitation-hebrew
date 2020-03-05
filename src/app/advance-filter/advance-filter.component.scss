@@ -1,6 +1,6 @@
 @import '../../styles/varbs.scss';
 
-.advance-container{
+.advance-container {
     padding: 2rem 2.5rem 1rem 2.5rem;
     z-index: 98;
     position: absolute;
@@ -8,64 +8,128 @@
     -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
     -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
     box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
-    width: 60rem;
-    height: 29.6rem;
+    width: 60*$width;
+    height: 30hv;
 }
-.sub-advance-container{
+
+.sub-advance-container {
     padding: 0 1rem 0 1rem;
 
 }
-.characteristics{
-    display: flex; 
-    flex-wrap:wrap;
+
+.characteristics {
+    display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
 }
-.character{
-    width: 9rem;
-    padding: 0.625rem 0  0.625rem 0 ;
+
+.character {
+    width: 9*$width;
+    padding: 0.625rem 0 0.625rem 0;
     //text-align: center;
 }
-.inputs-container{
+
+.inputs-container {
     display: flex;
-    align-items:flex-end !important;
-   // flex-wrap:wrap;
+    align-items: flex-end !important;
+    // flex-wrap:wrap;
     justify-content: space-between;
 
 }
-.box{
+
+.box {
     border: .06rem solid gray;
-    width: 7.5rem;
+    width: 7.5*$width;
     height: 2.5rem;
     margin-left: 0.4rem;
-   // display: inline
+
+    * {
+        margin-right: 5%;
+    }
+
+    input {
+        margin-top: 5%;
+        ;
+        //  margin-right: 5%;
+        width: 75%;
+        border: transparent;
+        outline: none;
+        //text-decoration: none;
+    }
+
+    img {
+        width: 8%;
+        // margin-right: 5%;
+    }
 }
-.buttons{
+
+.floor {
+    position: relative;
+}
+
+.floor-select {
+    margin-top: 0.4rem;
+    ;
+    width: 7.5*$width;
+    height: 15rem;
+    border: 1px solid gray;
+    margin-left: 0.4rem;
+    z-index: 99;
+    display: block;
+    overflow: scroll;
+    background-color: #FFFFFF;
+    overflow-x: hidden;
+    list-style-type: none;
+
+    position: absolute;
+    background-color: white;
+
+    li {
+        padding-right: 5%;
+        width: 4.7*$width;
+        height: 2.5rem;
+
+        &:hover {
+            background-color: #e4dede;
+        }
+    }
+
+
+
+}
+
+.buttons {
     display: flex;
     padding: 1rem;
     justify-content: space-between;
 
-    
+
 }
+
 .search-button {
     background-color: $theme-color;
     color: white;
     font-weight: bold;
     font-size: .8rem;
-    padding:.5rem 1rem .5rem 1rem;
+    padding: .5rem 1rem .5rem 1rem;
     //margin-right: 25rem;
     cursor: pointer;
-    &:hover{
-      background-color: darken($color: $theme-color, $amount: 20%);
+
+    &:hover {
+        background-color: darken($color: $theme-color, $amount: 20%);
     }
 }
-.inpt{
+
+.inpt {
     height: 2.5rem;
 
 }
 
-
 input[type="date"]::-webkit-inner-spin-button {
     display: none;
     -webkit-appearance: none;
+}
+.clear{
+    cursor: pointer;
 }

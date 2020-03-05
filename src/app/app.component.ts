@@ -18,7 +18,8 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // onClickApp(){
-  //   this.reApiService.closeBars.next(false);
-  // }
+  onClickApp() {
+    this.reService.isMaxFloorClicked = false;
+    this.reService.isMinFloorClicked = false;
+  }
 }

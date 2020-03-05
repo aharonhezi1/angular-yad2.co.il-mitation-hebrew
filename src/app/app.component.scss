@@ -1,33 +1,53 @@
 .filter {
-  padding-right: 25vw;
+ // padding-right: 25vw;
   padding-top: 20vh;
 }
 .advance{
   margin-top: .13rem;
-  padding-right: 25vw;
+ // padding-right: 25vw;
 }
 
 .sort {
-  padding-right: 25vw;
-  padding-top: 10vh;
+//  padding-right: 25vw;
+  padding-top: 40vh;
   margin-bottom: 2vh;
 }
 
 .list {
-  padding-right: 25vw;
+ // padding-right: 25vw;
   margin-bottom: 5vh;
 }
 .paging{
-  padding-right: 25vw;
+ // padding-right: 25vw;
   padding-top: 10vh;
   margin-bottom: 2vh;
 }
 #app {
+  background-color: #f9f9f9 !important;
+
+  padding-right: 10vw;
+
   &>* {
     //font-family:Rubic;;
+    font-size: 1rem;
     direction: rtl;
     text-align: right;
     overflow-x: unset;
     
+  }
+}
+@media only screen and (max-width: 1200px) {
+  #app {
+   // background-color: #f9f9f9 !important;
+    padding-right: 1vw;
+ 
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  #app {
+    padding-right: 25vw;
+   // background-color: #f9f9f9 !important;
+
   }
 }

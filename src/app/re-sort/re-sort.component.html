@@ -1,14 +1,14 @@
 <div class="sort-container">
     <div class="item">{{'מיין לפי'}}<span (click)="onClick('sortBy',$event)" id="sortBy"
             class="item box sort-by">{{translate[sortBy] }}<img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
-                width="15px" /> </span></div>
+               class="icon" /> </span></div>
     <div class="item">{{'הצג מודעות'}} <span
             [ngClass]="!isShowAddsWithPrice?'item box showAdds':'item box showAdds click'" (click)="onClick('price')"
             id="price">{{"₪ עם מחיר"}}</span>
         <span id="picture" (click)="onClick('picture')"
             [ngClass]="!isShowAddsWithPicture?'item box showAdds':'item box showAdds click'"><img
-                src="{{!isShowAddsWithPicture?picUrl:picOrangeUrl}}" width="15px" />{{" עם תמונה"}}</span></div>
-    <div class="item break"><span class="item box"><img src="{{mapPicUrl}}" width="18px" />{{"   תצוגת מפה  "}}</span>
+                src="{{!isShowAddsWithPicture?picUrl:picOrangeUrl}}" class="icon" />{{" עם תמונה"}}</span></div>
+    <div class="item break"><span class="item box"><img src="{{mapPicUrl}}" class='mapIcon' />{{"   תצוגת מפה  "}}</span>
     </div>
 </div>
 <div *ngIf="isShowSortBy" class="sortBy-options" (clickOutside)="onClickOutsideSortBy()">

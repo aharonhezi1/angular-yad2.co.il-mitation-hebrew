@@ -9,7 +9,7 @@ import { translate } from '../../../assets/translate';
 })
 export class CheckBoxComponent implements OnInit {
   @Input() option: string;
-  @Input()isChecked:boolean;
+  @Input() isChecked = false;;
   translate = translate;
   constructor() { }
 

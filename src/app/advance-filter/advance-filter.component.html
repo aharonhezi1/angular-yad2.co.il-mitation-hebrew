@@ -1,42 +1,68 @@
 <div class="advance-container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="">
-        <div class="">{{'מאפייני דירה'}}</div>
-     <!--    <div formArrayName="characteristics" class="row">
+        <div class="">
+            <div class="">{{'מאפייני דירה'}}</div>
+            <!--    <div formArrayName="characteristics" class="row">
             <div class="characteristics sub-advance-container" *ngFor="let character of getCharacteristics(); let i = index;"><div [formGroupName]="i" (click)="onCheckCharacteristic(character.characteristic,i)" class="character">
                     <app-check-box [isChecked]="character.value" [option]="character.characteristic"></app-check-box>
             </div></div>
 
         </div>-->
-        <div class="row">
-            <div class="characteristics sub-advance-container" *ngFor="let character of characteristics"><div (click)="onCheckCharacteristic(character)" class="character">
-                    <app-check-box  [isChecked]="characteristicsChecked.includes(character)" [option]="character"></app-check-box>
-            </div></div>
-
-        </div> 
-        <hr>
-        <div class="inputs-container sub-advance-container">
-            <div class="col-4">
-                <div class="row">{{'קומה'}}</div>
-                <div class="row">
-                    <div class="box"></div>
-                    <div class="box"></div>
+            <div class="row">
+                <div class="characteristics sub-advance-container" *ngFor="let character of characteristics">
+                    <div (click)="onCheckCharacteristic(character)" class="character">
+                        <app-check-box [isChecked]="characteristicsChecked.includes(character)" [option]="character">
+                        </app-check-box>
+                    </div>
                 </div>
+
             </div>
+            <hr>
+            <div class="inputs-container sub-advance-container">
+                <div class="col-4">
+                    <div class="row">{{'קומה'}}</div>
+                    <div class="row">
+                        <span class="floor">     <div class="box" (click)="onFloorClicked('min',$event)"><input formControlName="minFloor" type="text" autocomplete="something-new"
+                                placeholder="מ-" />
+                            <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                                [ngStyle]="{'transform': reService.isMinFloorClicked? 'rotate(180deg)':''}" /></div>
+                                <div *ngIf="reService.isMinFloorClicked" class="floor-select">
+                                    <li (click)="onChooseFloor(undefined,'min')" >הכל</li>
+                                    <li *ngFor="let num of minFloorArray" (click)="onChooseFloor(num,'min')">{{num}}</li>
+                                </div></span>
+                     <span class="floor"> 
+                         <div class="box" (click)="onFloorClicked('max',$event)"><input formControlName="maxFloor" type="text" autocomplete="something-new"
+                                placeholder="עד-" />
+                            <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
+                                [ngStyle]="{'transform': reService.isMaxFloorClicked? 'rotate(180deg)':''}" /></div>
+                                <div *ngIf="reService.isMaxFloorClicked" class="floor-select ">
+                                    <li (click)="onChooseFloor(undefined,'max')" >הכל</li>
+                                    <li *ngFor="let num of maxFloorArray" (click)="onChooseFloor(num,'max')" >{{num}}</li>
+                                </div>
+                            </span>
+                    </div>
+             
+                </div>
+           
             <div class="col-4">
                 <div class="row">{{'גודל דירה (במ"ר)'}}</div>
                 <div class="row">
-                    <div class="box"></div>
-                    <div class="box"></div>
+                    <div class="box"><input formControlName="minSize" type="number" autocomplete="something-new"
+                            placeholder="מ-" /></div>
+                    <div class="box"><input formControlName="maxSize" type="number" autocomplete="something-new"
+                            placeholder="עד-" /></div>
                 </div>
 
             </div>
             <div class="col-xs-3">
                 <div class="">{{'תאריך כניסה'}}</div>
-                <div class=""><input class="inpt" type="date" placeholder="החל מ- הזינו תאריך"></div>
+                <div class=""><input class="inpt" type="date" placeholder="החל מ- הזינו תאריך"
+                        formControlName="enteryDate"></div>
             </div>
             <div class="col-3">
-                <div class="row"><app-check-box></app-check-box>{{'כניסה מיידית'}}</div>
+                <div class="row" (click)="onImmediatelyEntery()">
+                    <app-check-box [isChecked]="isImmediatelyEntery" [option]="'כניסה מיידית'"></app-check-box>
+                </div>
             </div>
 
         </div>
@@ -44,16 +70,16 @@
         <div class="row sub-advance-container">
             <div class="col">
                 <div class="">{{'חיפוש חופשי'}}</div>
-                <div class=""><input type="text"></div>
+                <div class=""><input type="text" formControlName="freeSearch"></div>
             </div>
         </div>
         <hr>
         <div class="buttons row sub-advance-container">
             <div class=""></div>
             <button type="submit" class="search-button">{{'חיפוש'}}</button>
-            <div class="clear">{{'נקה'}}</div>
+            <div (click)="onClear()" class="clear">{{'נקה'}}</div>
         </div>
 
-    </div>
+</div>
 </form>
 </div>

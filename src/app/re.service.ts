@@ -8,9 +8,10 @@ import { BehaviorSubject } from 'rxjs';
 export class ReService {
 
 isOpenSortComponentBarsSubject = new BehaviorSubject<boolean>(false);
-isAdvanceSearchClickedSubject=new BehaviorSubject<boolean>(true);
+isAdvanceSearchClickedSubject=new BehaviorSubject<boolean>(false);
  // sortOptions = new BehaviorSubject<sortByModel>({ sortBy: 'byDate', isOnlyWithPic: false, isOnlyWithPrice: false });
-
+ isMaxFloorClicked = false;
+ isMinFloorClicked = false;
 
   constructor() { }
 }

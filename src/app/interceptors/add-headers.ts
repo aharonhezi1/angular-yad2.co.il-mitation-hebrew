@@ -15,6 +15,7 @@ export class AddHeadersInterceptor implements HttpInterceptor {
         const modified = req.clone({
             setHeaders: {
                 page: this.reApiService.currentPage + '',
+                pagesNumber:this.reApiService.pageNumberSubject.value+'',
                 sortOptions: JSON.stringify(this.reApiService.sortOptions)
             }
         });

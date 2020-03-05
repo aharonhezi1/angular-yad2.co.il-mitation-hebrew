@@ -3,7 +3,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { ReApiService } from '../re-api.service';
 import { translate } from '../../assets/translate';
 import { ReService } from '../re.service';
-import {splitBySearchExp} from '../../assets/splitBySearchExp' 
+import { splitBySearchExp } from '../../assets/splitBySearchExp'
 import { from } from 'rxjs';
 @Component({
   selector: 'app-re-filter',
@@ -11,7 +11,7 @@ import { from } from 'rxjs';
   styleUrls: ['./re-filter.component.scss']
 })
 export class ReFilterComponent implements OnInit, AfterViewInit {
-  constructor(private formBuilder: FormBuilder, private reApiService: ReApiService,private reService:ReService) { }
+  constructor(private formBuilder: FormBuilder, private reApiService: ReApiService, private reService: ReService) { }
   propertyTypeOption = {
     apartment: 'דירה', penthouse: 'פאנטהאוס', 'private house': 'בית פרטי', duplex: 'דופלקס',
     'land plot': 'מגרשים',
@@ -25,8 +25,8 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
     bulding: 'בניין מגורים',
     general: 'כללי'
   };
-  splitBySearchExp=splitBySearchExp;
-  addresses = { streets: [], cities: []};
+  splitBySearchExp = splitBySearchExp;
+  addresses = { streets: [], cities: [] };
   reTypes = ['forsale', 'forRent', 'roommates', 'commercial'];
   translate = translate;
   isHeaderLinkClicked = false;
@@ -46,7 +46,7 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
   // chosenRooms.max;
   // chosenRooms.min;
   roomsArray = [];
-  maxRoomArray = []; 
+  maxRoomArray = [];
   minRoomArray = [];
   form: FormGroup;
 
@@ -135,18 +135,18 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
       this.form.controls.propertyType.setValue(this.propertyTypeOption[this.propertyTypesChecked[0]]);
     }
   }
-onClickAdvanceSerch(){
-  this.reService.isAdvanceSearchClickedSubject.next(!this.reService.isAdvanceSearchClickedSubject.value);
-}
+  onClickAdvanceSerch() {
+    this.reService.isAdvanceSearchClickedSubject.next(!this.reService.isAdvanceSearchClickedSubject.value);
+  }
   onSubmit() {
-    let formValue = this.form.value;
-    formValue = {
-      ...formValue, propertyType: this.propertyTypesChecked,
-      address: this.isAddressChosen ? formValue.address : '',
-      maxRooms: this.chosenRooms.max ? this.chosenRooms.max : 12,
-      minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0
-    };   
-    this.reApiService.getFilterRE(formValue);
+    // let formValue = this.form.value;
+    // formValue = {
+    //   ...formValue, propertyType: this.propertyTypesChecked,
+    //   address: this.isAddressChosen ? formValue.address : '',
+    //   maxRooms: this.chosenRooms.max ? this.chosenRooms.max : 12,
+    //   minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0
+    // };
+    this.reApiService.getFilterRE();
   }
   populateRoomsArray() {
     for (let i = 2; i <= 24; i++) {
@@ -214,7 +214,7 @@ onClickAdvanceSerch(){
       case 'adrressesOptions':
         this.isAddressClicked = false;
         return e.stopPropagation();
-     
+
 
     }
     this.isHeaderLinkClicked = false;
@@ -222,8 +222,15 @@ onClickAdvanceSerch(){
   }
   onFormValueChange() {
     this.form.valueChanges.subscribe(value => {
-      this.reApiService.searchDetails = value;
-    })
+      let formValue =value;
+      formValue = {
+        ...formValue, propertyType: this.propertyTypesChecked,
+        address: this.isAddressChosen ? formValue.address : '',
+        maxRooms: this.chosenRooms.max ? this.chosenRooms.max : 12,
+        minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0
+      };
+      this.reApiService.searchDetails = formValue;
+    });
   }
   ngOnInit() {
     this.form = this.formBuilder.group({

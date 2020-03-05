@@ -5,7 +5,7 @@
     display: flex;
     flex-wrap: wrap;
     //align-content: space-between;
-    width: 43.4rem;
+    width: 43.4*$width;
     height: 3.6rem;
     justify-content: space-between;
     align-items:center ;
@@ -16,7 +16,7 @@
 .pages-number{
     display: flex;  
     justify-content: space-between;
-    width: 32rem;
+    width: 32*$width;
     
     
 }

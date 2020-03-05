@@ -1,11 +1,11 @@
-<table (click)="onItemClicked()">
-  <table *ngIf="!isItemOpen" class="table-item">
+<table >
+  <table (click)="onItemClicked()" *ngIf="!isItemOpen" class="table-item">
     <tr>
       <td [ngClass]="'pictures-adress'">
         <table>
           <tr>
             <th>
-              <img alt="" height="66px" width="1.625rem" src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
+              <img alt="" class="smallPic"  src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
             </th>
             <th id="address">
               <h6>
@@ -48,10 +48,10 @@
     </tr>
   </table>
 
-  <table *ngIf="isItemOpen" class="table-item-open">
+  <table (click)="onItemClicked()" *ngIf="isItemOpen" class="table-item-open">
     <tr>
       <th rowSpan="2" class="img-open">
-        <img alt="" height="117px" width="195px" src={{re.pictures[1]}} />
+        <img alt="" class="bigPic"  src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
       </th>
       <td>
         <table class="address-open">
@@ -69,7 +69,7 @@
         </table>
       </td>
       <td class="price-open">
-        {{re.price ? re.price +' ₪': "not mentioned"}}
+        {{re.price ? re.price +' ₪': translate["not mentioned"]}}
       </td>
     </tr>
     <tr class="about-open">
@@ -105,7 +105,7 @@
     <table *ngIf="isItemOpen">
       <tr>
         <td rowSpan="3" class='comercialBoxStyle'>
-          <div [ngStyle]="{'width': '195px'}">
+          <div class="item-open" >
 
           </div>
         </td>
