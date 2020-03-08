@@ -189,8 +189,14 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
     this.isAddressClicked = false;
     const input = this.form.value.address + ""
     if (input.length > 1) {
+      // this.reApiService.postMongoSearchAddress(input).subscribe((addresses: any) => {
+      //   this.addresses = addresses;
+      //   console.log(addresses);
+        
+      //   this.isAddressClicked = addresses.streets.length || addresses.cities.length;
 
-      this.reApiService.postSearchAddress(input).subscribe((addresses: any) => {
+      // });   
+        this.reApiService.postSearchAddress(input).subscribe((addresses: any) => {
         this.addresses = addresses;
         this.isAddressClicked = addresses.streets.length || addresses.cities.length;
 

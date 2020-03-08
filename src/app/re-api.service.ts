@@ -40,8 +40,8 @@ export class ReApiService {
       // console.log(this.pageNumber.value);
     });
   }
-//  getFilterRE = (details = null, advanceDetails = null) => {
- getFilterRE = (details = this.searchDetails, advanceDetails = this.advanceSearchDetails) => {
+  //  getFilterRE = (details = null, advanceDetails = null) => {
+  getFilterRE = (details = this.searchDetails, advanceDetails = this.advanceSearchDetails) => {
 
     this.queryParams = this.turnObjToQueryParams(details) || this.queryParams;
     this.advanceQueryParams = this.turnObjToQueryParams(advanceDetails) || this.advanceQueryParams;
@@ -57,5 +57,12 @@ export class ReApiService {
   postSearchAddress(address) {
     console.log(address);
     return this.http.post(environment.apiUrl + this.reParams + 'find-address', { address })
+  }
+  postMongoSearchAddress(address) {
+    console.log(address);
+    return this.http.post(environment.apiUrl + this.reParams + 'mongo-find-address', { address });
+    // .subscribe(address =>
+    //   console.log(address)
+    // )
   }
 }

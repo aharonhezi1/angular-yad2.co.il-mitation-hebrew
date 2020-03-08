@@ -1,18 +1,18 @@
-<table >
+<table>
   <table (click)="onItemClicked()" *ngIf="!isItemOpen" class="table-item">
     <tr>
       <td [ngClass]="'pictures-adress'">
         <table>
           <tr>
             <th>
-              <img alt="" class="smallPic"  src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
+              <img alt="" class="smallPic" src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
             </th>
             <th id="address">
               <h6>
-                {{ re.address.street}}   {{ re.address.number}} 
+                {{ re.address.street}} {{ re.address.number}}
               </h6>
               <p>
-                {{translate[re.about.type]}}               
+                {{translate[re.about.type]}}
                 {{ re.address.neighborhood}}
                 {{ re.address.city}}
               </p>
@@ -43,7 +43,7 @@
         </table>
       </td>
       <td [ngClass]="'price'">
-       <span> {{ re.price ?  re.price +" ₪":  translate["not mentioned"]}}</span> 
+        <span> {{ re.price ?  re.price +" ₪":  translate["not mentioned"]}}</span>
       </td>
     </tr>
   </table>
@@ -51,7 +51,7 @@
   <table (click)="onItemClicked()" *ngIf="isItemOpen" class="table-item-open">
     <tr>
       <th rowSpan="2" class="img-open">
-        <img alt="" class="bigPic"  src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
+        <img alt="" class="bigPic" src={{re.pictures[1]?re.pictures[1]:defaultPic}} />
       </th>
       <td>
         <table class="address-open">
@@ -98,6 +98,19 @@
             <th><span>{{translate['rooms']}} </span> </th>
           </tr>
         </table>
+      </td>
+      <td>
+        <div (click)="onClickShowOwner($event)" class="showOwner">
+          <div  class="showOwner button"><img src={{phonePicUrl}}> {{'הצגת מספר טלפון'}}
+          </div>
+          <div (click)="onClickDetails($event)" *ngIf="isShowOwnerClicked" class="details box-shadow">
+<div class="detail box-shadow">{{owner.name}}</div>
+<div class="detail box-shadow">{{owner.phone}}</div>
+<div class="detail box-shadow"><a>{{'שליחת דואר למפרסם'}}</a></div>
+          </div>
+        </div>
+
+      </td>
   </table>
 
   <div>
@@ -105,7 +118,7 @@
     <table *ngIf="isItemOpen">
       <tr>
         <td rowSpan="3" class='comercialBoxStyle'>
-          <div class="item-open" >
+          <div class="item-open">
 
           </div>
         </td>
@@ -113,7 +126,7 @@
           <div class="detailsBoxStyle">
             <table class="detailsBoxStyle-child">
               <tr>
-                <th class="detailsBoxStyle header"  colSpan="2">{{"תיאור הנכס"}}</th>
+                <th class="detailsBoxStyle header" colSpan="2">{{"תיאור הנכס"}}</th>
               </tr>
               <tr>
                 <td colSpan="2">{{re.description}}</td>
@@ -122,7 +135,7 @@
                 <div class="about-detail-child" *ngFor="let detail of aboutCol; let i=index">
                   {{translate[detail]}}<b> {{translate[re.about[detail]]|| re.about[detail]}}</b>
                 </div>
-                 <!-- <div class="about-detail-child" *ngFor="let detail of aboutCol; let i=index">
+                <!-- <div class="about-detail-child" *ngFor="let detail of aboutCol; let i=index">
                   {{translate[detail]}}<b> {{translate[re.about[detail]]}}</b>
                 </div> -->
               </tr>
@@ -138,8 +151,8 @@
             <div class="detailsBoxStyle-child">
               <div class="detailsBoxStyle header">{{"מה יש בנכס?"}}</div>
               <div class="propertyDetailsContainer">
-                <span    *ngFor="let detail of propertyDetailsCol" [ngClass]="re.propertyDetails[detail] ?'propertyExtraDetails':'propertyExtraDetails exist'"
-                >
+                <span *ngFor="let detail of propertyDetailsCol"
+                  [ngClass]="re.propertyDetails[detail] ?'propertyExtraDetails':'propertyExtraDetails exist'">
                   {{translate[detail] }}
                 </span>
 

@@ -1,16 +1,22 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { decamelize } from '../../../assets/decamelize';
 import { translate } from '../../../assets/translate';
+import { environment } from './../../../environments/environment';
+import { UserApiService } from 'src/app/user-api.service';
+
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
   styleUrls: ['./item.component.scss']
 })
 export class ItemComponent implements OnInit {
+  phonePicUrl = environment.apiUrl + '/icons/phone.png';
+  isShowOwnerClicked = false;
+  owner:any;
   defaultPic = '../../../assets/feed_img_placeholder_small.jpg';
   translate = translate;
   @Input() re: any;
-  constructor() { }
+  constructor(private userApiService: UserApiService) { }
   isItemOpen = false;
   propertyDetailsCol = [];
   decamelizePropertyDetailsCol = [];
@@ -19,6 +25,18 @@ export class ItemComponent implements OnInit {
 
   onItemClicked() {
     this.isItemOpen = !this.isItemOpen;
+  }
+  onClickShowOwner(e) {
+    this.isShowOwnerClicked = !this.isShowOwnerClicked;
+    this.userApiService.getOwner(this.re.owner).subscribe(user => {
+      this.owner = user;
+      console.log(this.owner);
+    })
+    e.stopPropagation();
+
+  }
+  onClickDetails(e) {
+    e.stopPropagation();
   }
   ngOnInit() {
     //  console.log(this.re);

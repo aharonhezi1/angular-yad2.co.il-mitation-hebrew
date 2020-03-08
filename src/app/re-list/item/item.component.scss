@@ -5,13 +5,21 @@ th {
   font: Rubic;
 }
 
+.box-shadow {
+  -webkit-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  -moz-box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+  box-shadow: .19rem .13rem .25rem 0px rgba(214, 214, 214, 1);
+}
+
 .pictures-adress {
   width: 21.56*$width;
   padding-right: .31rem;
-  #address{
+
+  #address {
     padding-right: 1.25rem;
   }
-  p{
+
+  p {
     font-size: small;
   }
 }
@@ -20,24 +28,25 @@ th {
   padding: 0 .625rem 0 .625rem;
   width: 11.62*$width;
   text-align: center;
-table{
-  margin-right: 1.9rem;
-}
 
-    .footer {
-      color: gray;
-    }
+  table {
+    margin-right: 1.9rem;
   }
+
+  .footer {
+    color: gray;
+  }
+}
 
 
 .price {
   width: 11.37*$width;
   text-align: left; //turn back ???
   padding-left: .31rem //turn back ???
- 
+
 }
 
-.table-item{
+.table-item {
   border: .06rem solid rgb(218, 218, 230) !important;
   border-collapse: collapse;
 
@@ -66,7 +75,9 @@ table{
 }
 
 .img-open {
-  padding-right: .31rem
+  padding-right: .31rem;
+
+
 }
 
 .address-open {
@@ -76,10 +87,62 @@ table{
 .about-open {
   text-align: center;
   width: 11.62*$width;
+
+  th {
+    width: 4*$width;
+  }
+
+  .showOwner {
+    width: 10*$width;
+    margin-left: .5rem;
+    text-align: center;
+    position: relative;
+
+    & .button {
+      background-color: #0fca80;
+      height: 2.2*$width;
+      width: 100%;
+      padding: .5rem;
+      font-size: .8rem;
+      color: white;
+      font-weight: bold;
+      border-radius: 4px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: darken($color: #0fca80, $amount: 10%) !important;
+
+      }
+    }
+
+    & .details {
+      width: 100%;
+      background-color: white;
+      position: absolute;
+
+      .detail {
+        padding: .5rem 0 .5rem 0;
+
+        a {
+          font-size: .8rem;
+          cursor: pointer;
+
+          &:hover {
+            color: $theme-color;
+          }
+        }
+      }
+
+    }
+
+
+  }
 }
 
 .about-label-open {
   color: gray;
+
+  th {}
 }
 
 .price-open {
@@ -89,17 +152,18 @@ table{
 }
 
 .detailsBoxStyle {
-  width:31.25*$width;
+  width: 31.25*$width;
   background-color: white;
- 
- // margin-right: .94rem
- &-child{
-  margin-right: .94rem;
-  font-size: small;
- }
-  &.header{
-   font-weight: bold;
- }
+
+  // margin-right: .94rem
+  &-child {
+    margin-right: .94rem;
+    font-size: small;
+  }
+
+  &.header {
+    font-weight: bold;
+  }
 }
 
 ;
@@ -126,35 +190,44 @@ table{
 
 .propertyExtraDetails {
   width: 7.5*$width;
- // font-weight: bold;
-    font-size: .80rem;
+  // font-weight: bold;
+  font-size: .80rem;
+
   &.exist {
     width: 7.5*$width;
-  
+
     color: gray
   }
-  padding:.5vh ;
+
+  padding:.5vh;
 }
 
-.about-detail{
+.about-detail {
   display: flex;
   flex-wrap: wrap;
-&-child{
-  flex-basis:50%;
-  font-size: .75rem;
+
+  &-child {
+    flex-basis: 50%;
+    font-size: .75rem;
+
+  }
 
 }
 
-}
 .smallPic {
   height: 4.12rem;
-  width:6.87*$width;
+  width: 6.87*$width;
+  border-radius: 2px;
+
 }
 
 .bigPic {
   height: 7.31rem;
   width: 12.2*$width;
+  border-radius: 5px;
+
 }
-.item-open{
+
+.item-open {
   width: 12.2*$width;
 }
