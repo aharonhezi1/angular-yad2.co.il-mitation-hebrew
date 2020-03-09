@@ -8,12 +8,12 @@ import { ReApiService } from '../re-api.service';
 })
 export class ReHeaderComponent implements OnInit {
 
-  constructor(private reApiService: ReApiService) { }
+  constructor(public reApiService: ReApiService) { }
   reTypes = ['forsale', 'forRent', 'roommates', 'commercial'];
-  reTypesHebrew = ['למכירה', 'להשכרה', 'דירות שותפים', 'נדל'+'"'+'ן מסחרי'];
+  reTypesHebrew = ['למכירה', 'להשכרה', 'דירות שותפים', 'נדל' + '"' + 'ן מסחרי'];
   onClickREtype(type: string) {
-   // console.log(type);
-    this.reApiService.reType=type;
+    // console.log(type);
+    this.reApiService.reType = type;
     this.reApiService.getRE(type)
   }
   ngOnInit() {

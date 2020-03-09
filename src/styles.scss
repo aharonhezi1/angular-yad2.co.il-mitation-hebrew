@@ -12,5 +12,16 @@ html,body{
 @media only screen and (min-width: 1000px) {
   html {
     font-size: 100%;
+    .noSearchResults{
+      margin-top: 40vh !important;
+    }
   }
+}
+
+
+button{
+  border: none ;
+ outline:none;
+ text-decoration: none;
+ display: inline-block;
 }

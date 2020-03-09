@@ -25,7 +25,7 @@ export class ReSortComponent implements OnInit {
   onClickOutsideSortBy() {
     this.isShowSortBy = false;
   }
-  onClick(id, e, option) {
+  onClick(id, e?, option?) {
     switch (id) {
       case 'sortBy':
         this.isShowSortBy = !this.isShowSortBy;

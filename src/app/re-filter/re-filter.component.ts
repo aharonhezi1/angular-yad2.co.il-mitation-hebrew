@@ -11,7 +11,7 @@ import { from } from 'rxjs';
   styleUrls: ['./re-filter.component.scss']
 })
 export class ReFilterComponent implements OnInit, AfterViewInit {
-  constructor(private formBuilder: FormBuilder, private reApiService: ReApiService, private reService: ReService) { }
+  constructor(private formBuilder: FormBuilder, public reApiService: ReApiService, public reService: ReService) { }
   propertyTypeOption = {
     apartment: 'דירה', penthouse: 'פאנטהאוס', 'private house': 'בית פרטי', duplex: 'דופלקס',
     'land plot': 'מגרשים',
@@ -91,7 +91,7 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
     this.isRoomSelectMaxClicked = false;
     e.stopPropagation();
   }
-  onChooseRoomsNum(maxOrMin, e, num, ) {
+  onChooseRoomsNum(maxOrMin, e?, num?, ) {
     if (maxOrMin === 'max') {
       this.chosenRooms.max = num;
       this.isRoomSelectMaxClicked = false;
