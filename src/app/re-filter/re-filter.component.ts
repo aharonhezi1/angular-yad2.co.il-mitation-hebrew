@@ -147,6 +147,8 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
     //   minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0
     // };
     this.reApiService.getFilterRE();
+    this.reApiService.postFilterRE();
+
   }
   populateRoomsArray() {
     for (let i = 2; i <= 24; i++) {
@@ -192,11 +194,11 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
       // this.reApiService.postMongoSearchAddress(input).subscribe((addresses: any) => {
       //   this.addresses = addresses;
       //   console.log(addresses);
-        
+
       //   this.isAddressClicked = addresses.streets.length || addresses.cities.length;
 
       // });   
-        this.reApiService.postSearchAddress(input).subscribe((addresses: any) => {
+      this.reApiService.postSearchAddress(input).subscribe((addresses: any) => {
         this.addresses = addresses;
         this.isAddressClicked = addresses.streets.length || addresses.cities.length;
 
@@ -228,13 +230,21 @@ export class ReFilterComponent implements OnInit, AfterViewInit {
   }
   onFormValueChange() {
     this.form.valueChanges.subscribe(value => {
-      let formValue =value;
+      let formValue = value;
       formValue = {
         ...formValue, propertyType: this.propertyTypesChecked,
         address: this.isAddressChosen ? formValue.address : '',
         maxRooms: this.chosenRooms.max ? this.chosenRooms.max : 12,
-        minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0
+        minRooms: this.chosenRooms.min ? this.chosenRooms.min : 0,
       };
+      formValue = {
+        ...formValue,
+        rooms: { min: formValue.minRooms, max: formValue.maxRooms },
+        price: { min: formValue.minPrice, max: formValue.maxPrice }
+      }
+      console.log(formValue);
+      
+
       this.reApiService.searchDetails = formValue;
     });
   }

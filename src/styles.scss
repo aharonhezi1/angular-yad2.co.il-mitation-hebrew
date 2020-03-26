@@ -17,11 +17,28 @@ html,body{
     }
   }
 }
+   /* Chrome, Safari, Edge, Opera */
+   input::-webkit-outer-spin-button,
+   input::-webkit-inner-spin-button {
+     -webkit-appearance: none;
+     margin: 0;
+   }
 
+   /* Firefox */
+   input[type=number] {
+     -moz-appearance: textfield;
+   }
 
 button{
   border: none ;
  outline:none;
  text-decoration: none;
  display: inline-block;
+}
+input{
+  &:disabled{
+    background-color: transparent;
+  }
+  //text-decoration: none;
+  //
 }

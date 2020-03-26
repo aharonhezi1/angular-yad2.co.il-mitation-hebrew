@@ -7,7 +7,7 @@
   <div [ngClass]="'filter'">
     <app-re-filter></app-re-filter>
   </div>
-  <div class="advance" *ngIf="isAdvanceSearchClicked">
+  <div  [ngClass]="isAdvanceSearchClicked?'advance':'invisible'">
     <app-advance-filter></app-advance-filter>
   </div>
   <div class="sort">

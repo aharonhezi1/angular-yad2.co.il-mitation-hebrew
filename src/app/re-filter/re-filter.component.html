@@ -45,14 +45,14 @@
           </td>
           <td  [ngClass]="'property-type'" (click)="onClickPropertyType($event)">
             <div>
-              <input placeholder="בחרו סוגי נכסים" formControlName="propertyType" type="text"
+              <input disabled placeholder="בחרו סוגי נכסים" formControlName="propertyType" type="text"
                 autocomplete="something-new" />
               <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
                 [ngStyle]="{'transform':isPropertyTypeClicked? 'rotate(180deg)':''}" />
             </div>
           </td>
-          <td [ngClass]="'rooms-num'" (click)="onClickedRooms($event)">
-            <input placeholder="חדרים" formControlName="rooms" type="text">
+          <td [ngClass]="'rooms-num'"  (click)="onClickedRooms($event)">
+            <input placeholder="חדרים" disabled formControlName="rooms" type="text">
             <img src="http://cdn.onlinewebfonts.com/svg/img_295694.svg"
               [ngStyle]="{'transform':isRoomsClicked ? 'rotate(180deg)':''}" />
           </td>

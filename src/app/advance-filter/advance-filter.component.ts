@@ -36,7 +36,7 @@ export class AdvanceFilterComponent implements OnInit {
   maxFloorArray = [];
 
   constructor(private formBuilder: FormBuilder, private reApiService: ReApiService, public reService: ReService) { }
-  onFloorClicked(maxOrMin,e) {
+  onFloorClicked(maxOrMin, e) {
     if (maxOrMin === 'max') {
       this.reService.isMaxFloorClicked = !this.reService.isMaxFloorClicked;
       this.reService.isMinFloorClicked = false;
@@ -78,11 +78,12 @@ export class AdvanceFilterComponent implements OnInit {
   }
   onSubmit() {
     this.reApiService.getFilterRE();
+    this.reApiService.postFilterRE();
   }
-  onClear(){
+  onClear() {
     this.form.reset();
-    this.isImmediatelyEntery=false;
-    this.characteristicsChecked=[];
+    this.isImmediatelyEntery = false;
+    this.characteristicsChecked = [];
   }
   onImmediatelyEntery() {
     this.isImmediatelyEntery = !this.isImmediatelyEntery;
@@ -91,7 +92,10 @@ export class AdvanceFilterComponent implements OnInit {
   onFormValueChange() {
     this.form.valueChanges.subscribe(value => {
       let formValue;
-      formValue = { ...value, enteryDate: value.enteryDate };
+      formValue = {
+        ...value, enteryDate: value.enteryDate, floor: { min: formValue.minFloor, max: formValue.maxFloor },
+        size: { min: formValue.minSize, max: formValue.maxSize }
+      }
       this.reApiService.advanceSearchDetails = formValue;
     });
   }
@@ -102,7 +106,7 @@ export class AdvanceFilterComponent implements OnInit {
     this.minFloorArray = this.floorArray;
     this.maxFloorArray = this.floorArray;
   }
- 
+
   ngOnInit() {
     this.form = this.formBuilder.group({
       maxFloor: '',

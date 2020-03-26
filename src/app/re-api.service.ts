@@ -13,8 +13,8 @@ export class ReApiService {
   currentPage = 1;
   pageNumberSubject = new BehaviorSubject<number>(0);
   reListSubject = new BehaviorSubject<any>(null);
-  searchDetails;// = new BehaviorSubject<any>(null);
-  advanceSearchDetails; //= new BehaviorSubject<any>(null);
+  searchDetails = {};// = new BehaviorSubject<any>(null);
+  advanceSearchDetails = {}; //= new BehaviorSubject<any>(null);
 
   reParams = '/api/real-estate/';
   reType = 'forsale';
@@ -53,6 +53,13 @@ export class ReApiService {
         this.reListSubject.next(list.re);
         this.pageNumberSubject.next(list.pageNum);
       });
+  }
+  postFilterRE() {
+
+
+    return this.http.post(
+      environment.apiUrl + this.reParams + this.reType,
+       {searchDetails:this.searchDetails,advanceSearchDetails:this.advanceSearchDetails}).subscribe();
   }
   postSearchAddress(address) {
     console.log(address);
